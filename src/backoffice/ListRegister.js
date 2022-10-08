@@ -1,12 +1,12 @@
 import React,{Component} from "react";
 
-export class ListProduct extends Component{
+export class ListRegister extends Component{
     render(){
 
         return(
 
             <div>
-                <h1>โปรแกรมธุรกิจ SME</h1>
+                <h1>การลงทะเบียน</h1>
             </div>
         )
     }

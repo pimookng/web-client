@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import {Link,Route,Routes}  from 'react-router-dom';
 import {Home} from "./Home"
 import {ListProduct} from "./backoffice/ListProduct"
+import {ListRegister} from "./backoffice/ListRegister"
 
 function App() {
   return (
@@ -15,11 +15,16 @@ function App() {
           <li>
             <Link to="/listProduct">โปรแกรม</Link>
           </li>
+          <li>
+            <Link to="/listRegister">การลงทะเบียน</Link>
+          </li>
         </ul>
       </nav>
 <Routes>
   <Route path="/" element={<Home/>}></Route>
   <Route path="/listProduct" element={<ListProduct/>}></Route>
+  <Route path="/listRegister" element={<ListRegister/>}></Route>
+  ListRegister
 </Routes>
     </div>
   );

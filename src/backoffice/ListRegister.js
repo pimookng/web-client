@@ -1,99 +1,58 @@
-import React, { Component } from "react";
-import { g } from "../GlobalVar"
-export class ListRegister extends Component {
+import React, { Component, useState, useEffect } from "react";
+import { g } from "../GlobalVar";
+import Register from './Register'
+// import RegisterItem from "./RegisterItem";
 
-    //== component ==
-    constructor(props) {
-        super(props);
+function ListRegister() {
 
-        this.state = {
-            data: [],
-            loading: true,
-            selectedIndex: 0
-        }
+    const [selectedRow, setSelectedRow] = useState({
+        CustomerName: "",
+        Reason: "",
+        IsCancel: false
+    })
+
+    const [data, setData] = useState([])
+
+    const [showModal, setShowModal] = useState(false)
+
+
+    const OnEdit = (row) => {
+        setSelectedRow(row)
+        return setShowModal(true)
     }
 
-    // List() {
-
-    //     fetch(g.URL_Server + 'Register/List')
-    //         .then(res => res.json())
-    //         .then(result => {
-    //             this.setState({ data: result, loading: false });
-    //         })
-    // }
-
-    async List() {
-
-        const response = await fetch(g.URL_Server+'Register/List', {
-
-            method: "post",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(this.param)
-        });
-        const result = await response.json();
-
-        this.setState({ data: result, loading: false });
-    }
-
-    param = {
+    const param = {
         SerialNo: '',
         CustomerName: '',
         CustomerID: 0
     };
 
-    componentDidMount() {
-        this.List();
+    async function List() {
+        const res = await fetch(g.URL_Server + 'Register/List', {
+
+            method: "post",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(param)
+        })
+        res.json()
+            .then(res => setData(res))
+            .catch(err => console.log(err));
     }
 
-    //== searching ==
-    frmSearch = () => {
-        return (
-            <div>
-                <div style={{ textAlign: "center" }}>
-                    <h1>การลงทะเบียน</h1>
-                </div>
-                <form onSubmit={this.OnSearch}>
-                    <label>SerialNo:</label><input type="text" name="txtSerialNo" />
-                    <label>Email:</label><input type="text" name="txtCustomerName" />
-                    <button type="submit">ค้นหา</button>
-                </form>
-            </div>
-        )
-    }
 
-    OnSearch = e => {
-        e.preventDefault()
 
-        this.param.SerialNo = e.target['txtSerialNo'].value
-        this.param.CustomerName = e.target['txtCustomerName'].value
-        this.param.CustomerID = 0;
-        this.List()
-    }
+    //replace componentDidMount
+    useEffect(() => { List(); },)
 
-    //== render ==
-    render() {
 
-        let ListTable = this.state.loading
-            ? <p><em>Loading...</em></p>
-            : this.renderTable();
-
-        //main render
-        return (
-            <div>
-                {this.frmSearch()}
-                {ListTable}
-            </div>
-        );
-    }
-
-    renderTable = () => {
-        const data = this.state.data
-        return (<div>
+    return <div>
+        <h5>ข้อมูลลงทะเบียน</h5>
+        <div>
             <table className='table table-striped' aria-labelledby="tabelLabel">
                 <thead>
                     <tr>
                         <th>IsCancel</th>
-                        <th>SerialNo</th>
+                        <th>SerialNo1</th>
                         <th>RegisterID</th>
                         <th>ProductName</th>
                         <th>Email</th>
@@ -102,6 +61,7 @@ export class ListRegister extends Component {
                     </tr>
                 </thead>
                 <tbody>
+                    {/* {Items} */}
                     {data.map((r, index) => //r is row
                         <tr key={index}>
                             <td><input type="checkbox" name="chkIsCancel" disabled checked={r.IsCancel} /></td>
@@ -114,18 +74,19 @@ export class ListRegister extends Component {
 
                             <td>
                                 <button className="btn btn-primary" data-toggle="modal" data-target="#ModalDialog"
-                                    onClick={() => this.OnEdit(index)}>edit</button> {" "}
+                                    onClick={() => OnEdit(r)}>edit</button> {" "}
                                 <button className="btn btn-danger" onClick={() => this.deleteItem(index)}>remove</button>
                             </td>
                         </tr>
                     )}
                 </tbody>
             </table>
-
-            {/*for modal dialog*/}
-            {/* {this.renderModal()} */}
-
         </div>
-        );
-    }
+
+        {/* edit */}
+        {showModal === true ? <Register row={selectedRow} isShow={setShowModal} setSelectedRow={setSelectedRow} /> : ''}
+    </div>
+
 }
+
+export default ListRegister;

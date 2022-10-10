@@ -2,7 +2,7 @@ import './App.css';
 import {Link,Route,Routes}  from 'react-router-dom';
 import {Home} from "./Home"
 import {ListProduct} from "./backoffice/ListProduct"
-import {ListRegister} from "./backoffice/ListRegister"
+import ListRegister from './backoffice/ListRegister'
 
 function App() {
   return (
@@ -20,11 +20,11 @@ function App() {
           </li>
         </ul>
       </nav>
+      <hr/>
 <Routes>
   <Route path="/" element={<Home/>}></Route>
   <Route path="/listProduct" element={<ListProduct/>}></Route>
-  <Route path="/listRegister" element={<ListRegister/>}></Route>
-  ListRegister
+  <Route path="/listRegister" element={<ListRegister/>}></Route>  
 </Routes>
     </div>
   );

@@ -1,5 +1,5 @@
 
-import { PostSave } from '../lib/Http'
+import { PostSave } from 'lib/Http'
 
 function Register(prop) {
     const { row, isShow, setSelectedRow } = prop;

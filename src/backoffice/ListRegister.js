@@ -1,20 +1,36 @@
 import React, { useState, useEffect } from "react";
-import { g } from "../GlobalVar";
-import Register from './Register';
-import { PostSave } from '../lib/Http'
-function ListRegister() {
 
+import Register from 'backoffice/Register';
+import { PostSave, Fetch_List } from 'lib/Http'
+function ListRegister() {
+    
+    //== state ==
+    const [data, setData] = useState([])
+    //select for edit,delete
     const [selectedRow, setSelectedRow] = useState({
         CustomerName: "",
         Reason: "",
         IsCancel: false
     })
+    const [showModal, setShowModal] = useState(false) //lookup form
 
-    const [data, setData] = useState([])
+    //replace componentDidMount
+    useEffect(() => { List(); },)
 
-    const [showModal, setShowModal] = useState(false)
+    //== search ==
+    const param = {
+        SerialNo: '',
+        CustomerName: '',
+        CustomerID: 0
+    };
 
+    function List() {
+        Fetch_List('Register/List', param)
+            .then(res => setData(res)) //success set state to data
+            .catch(err => console.log(err));
+    }
 
+    //== edit,delete ==
     const OnEdit = (row) => {
         setSelectedRow(row)
         return setShowModal(true)
@@ -23,39 +39,19 @@ function ListRegister() {
     const OnDelete = (index) => {
         if (window.confirm('ต้องการลบ ข้อมูล?')) {
             PostSave('Register/Save', data[index], true)
-                .then((result) => { 
+                .then((result) => {
                     if (result === "") { //delete success
                         const newData = { ...data }
-                        newData.slice(index, 1)
+                        newData.slice(index, 1) //remove array
                         setData(newData); //refresh page
                     }
-                    else  //error
-                        alert(result);
+                    else 
+                        alert(result);//error from server
 
                 })
+                .catch(err=>console.log(err))
         }
     }
-
-    const param = {
-        SerialNo: '',
-        CustomerName: '',
-        CustomerID: 0
-    };
-
-    async function List() {
-        const res = await fetch(g.URL_Server + 'Register/List', {
-
-            method: "post",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(param)
-        })
-        res.json()
-            .then(res => setData(res))
-            .catch(err => console.log(err));
-    }
-
-    //replace componentDidMount
-    useEffect(() => { List(); },)
 
     return <div>
         <h5>ข้อมูลลงทะเบียน</h5>

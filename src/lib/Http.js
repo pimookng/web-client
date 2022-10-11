@@ -1,20 +1,38 @@
-import { g } from '../GlobalVar'
+import { globalVar } from 'Global'
 
-export default class Http {
-
-}
+let g = globalVar;
 
 //add,edit,delete row
-export const  PostSave = async (path, data, isDeleted) => {
+export const PostSave = (path, data, isDeleted) => {
     if (isDeleted)
         data.RowState = "delete"
 
-    const res = await fetch(g.URL_Server + path, {
+    g.Request_Post_Json.body = JSON.stringify(data)
+    return Fetch(path, g.Request_Post_Json)
 
-        method: "post",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),//data is object  
-    });
+    //original
+    // const res = await fetch(g.URL.Server + path, {
+    //     method: "post",
+    //     headers: { "Content-Type": "application/json" },
+    //     body:'',//data is object  
+    // });
+}
 
+export const Fetch_List = (path, param) => {
+    g.Request_Post_Json.body = JSON.stringify(param)
+    return Fetch(path, g.Request_Post_Json);
+
+    //original
+    // const res = await fetch(g.URL.Server + path, {
+    //     method: "post",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(param),//data is object  
+    // });
+
+    //return await res.json();
+}
+
+const Fetch = async (path, req) => {
+    const res = await fetch(g.URL.Server + path, req);
     return await res.json();
 }

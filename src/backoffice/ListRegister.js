@@ -22,39 +22,19 @@ function ListRegister() {
 
     const OnDelete = (index) => {
         if (window.confirm('ต้องการลบ ข้อมูล?')) {
-            // let deleteRow = data[index]
-            // deleteRow.RowState = "delete"
-            const result = PostSave("Register/Save",data[index],true)
-            if (result === "") { //delete success
-                const newData = { ...data }
-                newData.slice(index, 1)
-                setData(newData); //refresh page
-                setShowModal(false);
-            }
-            else {
-                console.log(result); //error
-                alert(result);
-            }
+            PostSave('Register/Save', data[index], true)
+                .then((result) => { 
+                    if (result === "") { //delete success
+                        const newData = { ...data }
+                        newData.slice(index, 1)
+                        setData(newData); //refresh page
+                    }
+                    else  //error
+                        alert(result);
+
+                })
         }
     }
-
-    // const OnDelete = (index) => {
-    //     if (window.confirm('ต้องการลบ ข้อมูล?')) {
-    //         let deleteRow = data[index]
-    //         deleteRow.RowState = "delete"
-    //         const result = Post("Register/Save", deleteRow)
-    //         if (result === "") { //delete success
-    //             const newData = { ...data }
-    //             newData.slice(index, 1)
-    //             setData(newData); //refresh page
-    //             setShowModal(false);
-    //         }
-    //         else {
-    //             console.log(result); //error
-    //             alert(result);
-    //         }
-    //     }
-    // }
 
     const param = {
         SerialNo: '',
@@ -73,8 +53,6 @@ function ListRegister() {
             .then(res => setData(res))
             .catch(err => console.log(err));
     }
-
-
 
     //replace componentDidMount
     useEffect(() => { List(); },)

@@ -1,8 +1,7 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { g } from "../GlobalVar";
-import Register from './Register'
-// import RegisterItem from "./RegisterItem";
-
+import Register from './Register';
+import { PostSave } from '../lib/Http'
 function ListRegister() {
 
     const [selectedRow, setSelectedRow] = useState({
@@ -20,6 +19,42 @@ function ListRegister() {
         setSelectedRow(row)
         return setShowModal(true)
     }
+
+    const OnDelete = (index) => {
+        if (window.confirm('ต้องการลบ ข้อมูล?')) {
+            // let deleteRow = data[index]
+            // deleteRow.RowState = "delete"
+            const result = PostSave("Register/Save",data[index],true)
+            if (result === "") { //delete success
+                const newData = { ...data }
+                newData.slice(index, 1)
+                setData(newData); //refresh page
+                setShowModal(false);
+            }
+            else {
+                console.log(result); //error
+                alert(result);
+            }
+        }
+    }
+
+    // const OnDelete = (index) => {
+    //     if (window.confirm('ต้องการลบ ข้อมูล?')) {
+    //         let deleteRow = data[index]
+    //         deleteRow.RowState = "delete"
+    //         const result = Post("Register/Save", deleteRow)
+    //         if (result === "") { //delete success
+    //             const newData = { ...data }
+    //             newData.slice(index, 1)
+    //             setData(newData); //refresh page
+    //             setShowModal(false);
+    //         }
+    //         else {
+    //             console.log(result); //error
+    //             alert(result);
+    //         }
+    //     }
+    // }
 
     const param = {
         SerialNo: '',
@@ -43,7 +78,6 @@ function ListRegister() {
 
     //replace componentDidMount
     useEffect(() => { List(); },)
-
 
     return <div>
         <h5>ข้อมูลลงทะเบียน</h5>
@@ -75,7 +109,7 @@ function ListRegister() {
                             <td>
                                 <button className="btn btn-primary" data-toggle="modal" data-target="#ModalDialog"
                                     onClick={() => OnEdit(r)}>edit</button> {" "}
-                                <button className="btn btn-danger" onClick={() => this.deleteItem(index)}>remove</button>
+                                <button className="btn btn-danger" onClick={() => OnDelete(index)}>remove</button>
                             </td>
                         </tr>
                     )}

@@ -1,4 +1,6 @@
-// import React, { Component,useState } from "react";
+
+// import React, {useState,useEffect } from "react";
+import { g } from "../GlobalVar";
 
 function Register(prop) {
     const { row, isShow,setSelectedRow } = prop;
@@ -18,6 +20,7 @@ function Register(prop) {
 
     }
 
+
     function onCheckChange(event){
         event.preventDefault();
         const{name,checked}=event.target;
@@ -32,7 +35,44 @@ function Register(prop) {
         display: 'block'
     }
 
-    // let r = row;
+
+        
+//== SaveData ==
+const OnSave =async e => {
+    e.preventDefault()
+    const response = await fetch(g.URL_Server+'Register/Save', {
+
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(row)        
+    });
+    const result = await response.json();
+    if (result === "") {
+        isShow(false); //save complete
+    }
+    else {
+        console.log(result); //error
+        alert(result);
+    }
+}
+// const OnSave =async e => {
+//     e.preventDefault()
+//     const response = await fetch(g.URL_Server+'Register/Save', {
+
+//         method: "post",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify(row)        
+//     });
+//     const result = await response.json();
+//     if (result === "") {
+//         isShow(false); //save complete
+//     }
+//     else {
+//         console.log(result); //error
+//         alert(result);
+//     }
+// }
+
     return (
 
         <div className="modal show fade" style={modalStyle}>
@@ -40,7 +80,7 @@ function Register(prop) {
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title">ข้อมูลลงทะเบียน</h5>
-                        <button type="button" className="btn-close" onClick={() => isShowModal(false)} data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" className="btn-close" onClick={() => isShow(false)} data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
                         <p>
@@ -58,9 +98,10 @@ function Register(prop) {
                         </p>
                     </div>
                     <div className="modal-footer">
-                        <button type="button" className="btn btn-primary">Save changes</button>
+                        <button type="button" className="btn btn-primary"
+                            onClick={OnSave}>Save</button>
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal"
-                            onClick={() => isShowModal(false)}>Close</button>
+                            onClick={() => isShow(false)}>Close</button>
                     </div>
                 </div>
             </div>

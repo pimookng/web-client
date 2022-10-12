@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Register from 'backoffice/Register';
 import { PostSave, Fetch_List } from 'lib/Http'
 function ListRegister() {
-    
+
     //== state ==
     const [data, setData] = useState([])
     //select for edit,delete
@@ -15,7 +15,11 @@ function ListRegister() {
     const [showModal, setShowModal] = useState(false) //lookup form
 
     //replace componentDidMount
-    useEffect(() => { List(); },)
+    // useEffect(() => {
+    //     // if(ListTable!==<p>no data</p>)
+    //     if (data.length > 0)
+    //         List();
+    // },)
 
     //== search ==
     const param = {
@@ -33,7 +37,7 @@ function ListRegister() {
     //== edit,delete ==
     const OnEdit = (row) => {
         setSelectedRow(row)
-        return setShowModal(true)
+        return setShowModal(true)      
     }
 
     const OnDelete = (index) => {
@@ -45,17 +49,26 @@ function ListRegister() {
                         newData.slice(index, 1) //remove array
                         setData(newData); //refresh page
                     }
-                    else 
+                    else
                         alert(result);//error from server
 
                 })
-                .catch(err=>console.log(err))
+                .catch(err => console.log(err))
         }
     }
 
-    return <div>
-        <h5>ข้อมูลลงทะเบียน</h5>
-        <div>
+    // const frmLookup=(IsClosed)=>{
+    //     if(!IsClosed)
+    //         setShowModal(true);
+    //         else{
+    //             List()
+    //             setShowModal(false)
+    //         }
+    // }
+
+    let ListTable = <p>no data</p>
+    if (data.length > 0)
+        ListTable = <div>
             <table className='table table-striped' aria-labelledby="tabelLabel">
                 <thead>
                     <tr>
@@ -69,7 +82,6 @@ function ListRegister() {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {Items} */}
                     {data.map((r, index) => //r is row
                         <tr key={index}>
                             <td><input type="checkbox" name="chkIsCancel" disabled checked={r.IsCancel} /></td>
@@ -91,9 +103,30 @@ function ListRegister() {
             </table>
         </div>
 
+    const OnSearch = e => {
+        e.preventDefault()
+
+        param.SerialNo = e.target['txtSerialNo'].value
+        param.CustomerName = e.target['txtCustomerName'].value
+        param.CustomerID = 0;
+        List()
+    }
+
+    let SearchBar = <div>
+        <h3 style={{ textAlign: "center" }}>ข้อมูลลงทะเบียน</h3>
+        <form onSubmit={OnSearch}>
+            <label>SerialNo:</label><input type="text" name="txtSerialNo" />
+            <label>Email:</label><input type="text" name="txtCustomerName" />
+            <button type="submit">ค้นหา</button>
+        </form>
+    </div>
+
+    return <div>
+        {SearchBar}
+        {ListTable}
         {/* edit */}
         {showModal === true ? <Register row={selectedRow} isShow={setShowModal} setSelectedRow={setSelectedRow} /> : ''}
-    </div>
+    </div >
 
 }
 

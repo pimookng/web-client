@@ -19,8 +19,8 @@ export const PostSave = (path, data, isDeleted) => {
 }
 
 export const Fetch_List = (path, param) => {
-    g.Request_Post_Json.body = JSON.stringify(param)
-    return Fetch(path, g.Request_Post_Json);
+    g.Request.Post.Json.body = JSON.stringify(param)
+    return Fetch(path, g.Request.Post.Json);
 
     //original
     // const res = await fetch(g.URL.Server + path, {

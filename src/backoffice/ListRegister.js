@@ -16,9 +16,7 @@ function ListRegister() {
 
     //replace componentDidMount
     // useEffect(() => {
-    //     // if(ListTable!==<p>no data</p>)
-    //     if (data.length > 0)
-    //         List();
+    //List()
     // },)
 
     //== search ==
@@ -34,10 +32,17 @@ function ListRegister() {
             .catch(err => console.log(err));
     }
 
+    const frmLookup = (IsShowed) => {
+        if (IsShowed === false)
+            List() //refresh data after edit
+
+        setShowModal(IsShowed)
+    }
+
     //== edit,delete ==
     const OnEdit = (row) => {
         setSelectedRow(row)
-        return setShowModal(true)      
+        return frmLookup(true)
     }
 
     const OnDelete = (index) => {
@@ -47,7 +52,7 @@ function ListRegister() {
                     if (result === "") { //delete success
                         const newData = { ...data }
                         newData.slice(index, 1) //remove array
-                        setData(newData); //refresh page
+                        setData(newData); //refresh data
                     }
                     else
                         alert(result);//error from server
@@ -57,14 +62,7 @@ function ListRegister() {
         }
     }
 
-    // const frmLookup=(IsClosed)=>{
-    //     if(!IsClosed)
-    //         setShowModal(true);
-    //         else{
-    //             List()
-    //             setShowModal(false)
-    //         }
-    // }
+
 
     let ListTable = <p>no data</p>
     if (data.length > 0)
@@ -125,7 +123,7 @@ function ListRegister() {
         {SearchBar}
         {ListTable}
         {/* edit */}
-        {showModal === true ? <Register row={selectedRow} isShow={setShowModal} setSelectedRow={setSelectedRow} /> : ''}
+        {showModal === true ? <Register row={selectedRow} isShow={frmLookup} setSelectedRow={setSelectedRow} /> : ''}
     </div >
 
 }

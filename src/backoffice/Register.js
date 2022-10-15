@@ -33,8 +33,9 @@ function Register(prop) {
 
         PostSave('Register/Save', row)
             .then((result) => { //success
-                if (result === "")
-                    isShow(false); //close modal    
+                if (result === ""){
+                    isShow(false); //close modal   
+                }
                 else
                     alert(result); //error
             })

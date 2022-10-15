@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg21211" viewBox="0 0 200 260" version="1.0">
+  <defs id="defs21213">
+    <linearGradient id="linearGradient4034" x1="86.602" gradientUnits="userSpaceOnUse" y1="117.62" gradientTransform="matrix(.97618 0 0 .97618 -11.424 -16.462)" x2="234.81" y2="109">
+      <stop id="stop4030" stop-color="#bed80a" offset="0"/>
+      <stop id="stop4032" stop-color="#728200" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient4042" x1="81.894" gradientUnits="userSpaceOnUse" y1="148.79" gradientTransform="matrix(.97618 0 0 .97618 -11.424 -16.462)" x2="59.738" y2="148.08">
+      <stop id="stop4038" stop-color="#a8bd0e" offset="0"/>
+      <stop id="stop4040" stop-color="#869329" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient4050" x1="122.61" gradientUnits="userSpaceOnUse" y1="36.648" gradientTransform="matrix(.97618 0 0 .97618 -11.424 -16.462)" x2="122.26" y2="49.193">
+      <stop id="stop4046" stop-color="#96a62a" offset="0"/>
+      <stop id="stop4048" stop-color="#b3cc0a" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient4058" x1="102.04" gradientUnits="userSpaceOnUse" y1="98.861" gradientTransform="matrix(.97618 0 0 .97618 -11.424 -16.462)" x2="229.82" y2="90.78">
+      <stop id="stop4054" stop-color="#dcdcdc" offset="0"/>
+      <stop id="stop4056" stop-color="#cbcbcb" offset="1"/>
+    </linearGradient>
+    <linearGradient id="linearGradient4066" x1="97.492" gradientUnits="userSpaceOnUse" y1="242.81" gradientTransform="matrix(.97618 0 0 .97618 -11.424 -16.462)" x2="224.77" y2="218.56">
+      <stop id="stop4062" stop-color="#dcdcdc" offset="0"/>
+      <stop id="stop4064" stop-color="#c1c1c1" offset="1"/>
+    </linearGradient>
+    <filter id="filter3341" y="-.44344" width="1.2659" x="-.13294" height="1.8869">
+      <feGaussianBlur id="feGaussianBlur3343" stdDeviation="9.8321433"/>
+    </filter>
+  </defs>
+  <g id="layer1" transform="translate(-45.47 -16.648)">
+    <path id="path2529" opacity=".54369" d="m23.756 237.41l166.99-29.41-22.35-37.38-144.64 66.79z" fill-rule="evenodd" transform="translate(45.47 16.648)" filter="url(#filter3341)"/>
+    <path id="path3411" fill-opacity=".87843" fill-rule="evenodd" fill="#afafde" d="m224.25 223.71l-155.73 32.61-20.831-37.42 144.9-25.24 31.66 30.05z"/>
+    <path id="path3405" fill-rule="evenodd" fill="url(#linearGradient4034)" d="m223.49 31.763l-155.86 3.01 0.889 221.55 155.73-32.61-0.76-191.95z"/>
+    <path id="path3407" fill-rule="evenodd" fill="url(#linearGradient4042)" d="m67.635 34.773l0.884 221.55-20.83-37.42-0.798-199.87 20.744 15.743z"/>
+    <path id="path3409" fill-rule="evenodd" fill="url(#linearGradient4050)" d="m223.49 31.763l-155.86 3.01-20.739-15.742 145-0.828 31.6 13.56z"/>
+    <path id="path3437" fill-rule="evenodd" fill="url(#linearGradient4066)" d="m224.05 173.88l-155.81 21.38 0.285 60.65 155.74-32.21-0.21-49.82z"/>
+    <path id="path3440" fill-rule="evenodd" fill="#c0c0c0" d="m47.467 164.02l0.227 54.11 20.558 37.71-0.077-60.7-20.708-31.12z"/>
+    <path id="path3423" stroke="#000" stroke-width=".97618px" fill="none" d="m308.2 209.64l-0.82-37.21 920.22-152.79-919.4 190z"/>
+    <path id="path3452" d="m178.52 225.88v-37.65l38-5.58 0.17 36.26-38.17 6.97z" fill-rule="evenodd" stroke="#000" stroke-width=".97618px" fill="#808080"/>
+    <path id="path3458" fill-rule="evenodd" fill="url(#linearGradient4058)" d="m223.54 55.49l-155.82 5.552 0.403 37.459 155.51-10.704-0.09-32.307z"/>
+    <path id="path3460" fill-rule="evenodd" fill="#c0c0c0" d="m47.032 43.726l0.226 32.421 20.871 21.74-0.395-36.825-20.702-17.336z"/>
+    <path id="path3425" stroke="#00f" stroke-width=".97618px" fill="none" d="m-7.3591 52.854l-0.0646-38.861-120.45-119.17 120.51 158.03z"/>
+    <path id="path3462" d="m50.045 73.862v-23.533l14.295 12.563v25.349l-14.295-14.379z" fill-rule="evenodd" stroke="#000" stroke-width=".97618px" fill="#808080"/>
+    <g id="g2492" transform="matrix(.97618 0 0 .97618 30.761 -8.6179)">
+      <path id="rect3464" d="m19.096 191.51s0.448 0.72 0.448 0.72v36.95s-0.448-0.83-0.448-0.83v-36.84"/>
+      <path id="path3467" d="m20.276 193.42l1.016 1.65v37.35l-1.016-1.89v-37.11"/>
+      <path id="path3469" d="m22.629 197.24l1.918 3.11v38.09l-1.918-3.55v-37.65"/>
+      <path id="path3471" d="m25.782 202.35l0.63 1.03v38.52l-0.63-1.17v-38.38"/>
+      <path id="path3473" d="m26.685 203.82l0.409 0.66v38.68l-0.409-0.76v-38.58"/>
+      <path id="path3475" d="m29.847 208.95l0.899 1.46v39.51l-0.899-1.66v-39.31"/>
+      <path id="path3477" d="m31.995 212.43l1.003 1.63v40.03l-1.003-1.85v-39.81"/>
+      <path id="path3479" d="m33.621 215.07l0.939 1.53v40.39l-0.939-1.74v-40.18"/>
+      <path id="path3497" d="m27.446 205.05l0.951 1.55v38.97l-0.951-1.76v-38.76"/>
+    </g>
+    <text id="text12925" font-size="18.014px" font-family="Bitstream Vera Sans" xml:space="preserve" transform="matrix(.91568 -.057443 .011640 1.0914 0 0)" y="83.501213" x="83.808556" font-weight="bold" line-height="125%" fill="#2c5aa0">
+      <tspan id="tspan12927" y="83.501213" x="83.808556">openclipart.org</tspan>
+    </text>
+    <text id="text19024" font-size="8.9608px" xml:space="preserve" transform="matrix(-.0054733 -.99998 1.0047 .86230 0 0)" y="59.639751" x="-120.7682" font-family="Bitstream Vera Sans" line-height="125%">
+      <tspan id="tspan19026" y="59.639751" x="-120.7682">Public Domain</tspan>
+    </text>
+    <text id="text15865" stroke-width=".97618" font-size="18.014px" font-family="Bitstream Vera Sans Mono" xml:space="preserve" transform="matrix(.91502 -.067056 .023101 1.0912 0 0)" stroke="#000000" y="121.75474" x="127.45412" font-weight="bold" line-height="125%" fill="#e6e6e6">
+      <tspan id="tspan15869" y="121.75474" x="127.45412" stroke-width=".97618">My Box</tspan>
+    </text>
+    <path id="path2574" fill-rule="evenodd" d="m47.454 162.11l0.001 3.65 19.787 30.1c0.247 0.37 0.685 0.57 1.125 0.5l155.7-21.28-0.05-2.3-155.25 21.21-21.316-31.88z"/>
+    <path id="path3350" fill-rule="evenodd" d="m47.186 75.669l0.001 3.656 20.055 19.563c0.247 0.37 0.685 0.565 1.125 0.5l155.26-11.559-0.05-2.297-154.81 11.481-21.584-21.344z"/>
+    <path id="path3352" fill-rule="evenodd" d="m47.06 41.43l0.001 3.656 20.181 16.659c0.247 0.37 0.685 0.565 1.125 0.5l155.26-5.532-0.05-2.297-154.81 5.454-21.71-18.44z"/>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>Software Box remix</dc:title>
+        <dc:date>2008-07-05T22:13:42</dc:date>
+        <dc:description>I tried to add perspective</dc:description>
+        <dc:source>http://openclipart.org/detail/17577/software-box-remix-by-metalmarious</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>metalmarious</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>box</rdf:li>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+            <rdf:li>image</rdf:li>
+            <rdf:li>media</rdf:li>
+            <rdf:li>png</rdf:li>
+            <rdf:li>product</rdf:li>
+            <rdf:li>program</rdf:li>
+            <rdf:li>public domain</rdf:li>
+            <rdf:li>remix</rdf:li>
+            <rdf:li>software</rdf:li>
+            <rdf:li>software box</rdf:li>
+            <rdf:li>svg</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

@@ -1,63 +1,76 @@
 import { Fetch_List } from "lib/Http";
 import { useState, useEffect } from "react";
 import CardProduct from 'component/CardProduct'
+
 function ListProduct() {
-    const product = {
-        productName: "",
+    let productTest = {
+        productVersionName: "",
         productThaiName: "",
         version: "",
-        isShowed: true
+        edition: {
+            edition: "",
+            ImageURL: "",
+            price: 0
+        }
     }
-    const groupEdition={
-        edition:"",
-        price:0,
-        downloadURL:""
-    }
-    const [data, setData] = useState([])
-    const [selectProduct, setSelectProduct] = useState(product)
+    // const groupEdition={
+    //     edition:"",
+    //     price:0,
+    //     downloadURL:""
+    // }
+
+    const [products, setProduct] = useState([])
+    // const [editions, setEdition] = useState([])
+    const [selectProduct, setSelectProduct] = useState(products)
+
+    const [showModal, setShowModal] = useState(false) //lookup form
 
     function List() {
-        Fetch_List('Product/List', product)
-            .then(res => setData(res)) //success set state to data
+        Fetch_List('Product/List', { isShowed: true })
+            .then(res => {
+                // productTest=res;
+                setProduct(res)
+            }) //success set state to data
             .catch(err => console.log(err));
     }
 
     useEffect(() => {
-        List()
+        if (products.length === 0){
+            List()
+        }
+
     },)
 
+    const frmLookup=(isShowed)=>{
+        // const detail = rowProduct.edition
+        setShowModal(isShowed)
+    }
+
+    const OnOpenDetail = (row) => {       
+        setSelectProduct(row)
+        frmLookup(true)
+    }
+
     let ListTable = ''
-    if (data.length > 0)
+    if (products.length > 0)
         ListTable = (
             <div>
-                <table className='table table-striped' aria-labelledby="tabelLabel">
-                    <thead>
-                        <tr>
-                            <th>ProductName</th>
-                            <th>ProductThaiName</th>
-                            <th>Version</th>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data.map((r, index) => //r is row
-                         <CardProduct.Main row={r}></CardProduct.Main> 
-                            // <tr key={index}>                                
-                            //     <td>{r.ProductName}</td>
-                            //     <td>{r.ProductThaiName}</td>
-                            //     <td>{r.Version}</td>                                
-                            // </tr>
+                        {products.map((r, index) => //r is row
+                            <CardProduct.Main key={index} row={r} OnOpenDetail={OnOpenDetail}/>
                         )}
 
-                    </tbody>
-                </table>
+                        <hr/>
             </div>
         )
 
+
+        
     return (
         <div>
             <h3 style={{ textAlign: "center" }}>โปรแกรมธุรกิจ SME</h3>
-            {ListTable}
+            {ListTable}            
+            {showModal === true ? <CardProduct.Detail row={selectProduct} isShow={frmLookup} /> : ''}
         </div>
 
 

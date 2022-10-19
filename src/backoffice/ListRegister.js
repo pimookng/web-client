@@ -22,6 +22,9 @@ function ListRegister() {
     //== search ==
     const param = {
         SerialNo: '',
+        ProductName: '',
+        Version: '',
+        Edition: '',
         CustomerName: '',
         CustomerID: 0
     };
@@ -105,6 +108,9 @@ function ListRegister() {
         e.preventDefault()
 
         param.SerialNo = e.target['txtSerialNo'].value
+        param.ProductName = e.target['txtProductName'].value
+        param.Version = e.target['txtVersion'].value
+        param.Edition = e.target['txtEdition'].value
         param.CustomerName = e.target['txtCustomerName'].value
         param.CustomerID = 0;
         List()
@@ -112,9 +118,14 @@ function ListRegister() {
 
     let SearchBar = <div>
         <h3 style={{ textAlign: "center" }}>ข้อมูลลงทะเบียน</h3>
-        <form onSubmit={OnSearch}>
+        <form onSubmit={OnSearch} class="needs-validation" noValidate>
             <label>SerialNo:</label><input type="text" name="txtSerialNo" />
-            <label>Email:</label><input type="text" name="txtCustomerName" />
+            <label>ชื่อโปรแกรม : </label><input type="text" name="txtProductName" />
+            <label>Version : </label><input type="text" name="txtVersion" />
+            <label>Edition : </label><input type="text" name="txtEdition" />
+            <label>Email:</label><input type="text" name="txtCustomerName" required />
+            <input type="checkbox" name="chkDate" /><label>ช่วงวันที่ : </label>
+            <input type='date'/>
             <button type="submit">ค้นหา</button>
         </form>
     </div>

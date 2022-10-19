@@ -3,20 +3,15 @@ import { useState, useEffect } from "react";
 import CardProduct from 'component/CardProduct'
 
 function ListProduct() {
-    let productTest = {
-        productVersionName: "",
-        productThaiName: "",
-        version: "",
-        edition: {
-            edition: "",
-            ImageURL: "",
-            price: 0
-        }
-    }
-    // const groupEdition={
-    //     edition:"",
-    //     price:0,
-    //     downloadURL:""
+    // let productTest = {
+    //     productVersionName: "",
+    //     productThaiName: "",
+    //     version: "",
+    //     edition: {
+    //         edition: "",
+    //         ImageURL: "",
+    //         price: 0
+    //     }
     // }
 
     const [products, setProduct] = useState([])
@@ -55,16 +50,12 @@ function ListProduct() {
     if (products.length > 0)
         ListTable = (
             <div>
-
-                        {products.map((r, index) => //r is row
-                            <CardProduct.Main key={index} row={r} OnOpenDetail={OnOpenDetail}/>
-                        )}
-
-                        <hr/>
+                    {products.map((r, index) => //r is row
+                        <CardProduct.Main key={index} row={r} OnOpenDetail={OnOpenDetail}/>
+                    )}
+                    <hr/>
             </div>
         )
-
-
         
     return (
         <div>
@@ -72,8 +63,6 @@ function ListProduct() {
             {ListTable}            
             {showModal === true ? <CardProduct.Detail row={selectProduct} isShow={frmLookup} /> : ''}
         </div>
-
-
     )
 }
 

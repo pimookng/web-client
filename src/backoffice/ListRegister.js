@@ -26,6 +26,9 @@ function ListRegister() {
         Version: '',
         Edition: '',
         CustomerName: '',
+        chkDate: false,
+        dtpStart: Date.now.value,
+        dtpEnd: Date.now.value,
         CustomerID: 0
     };
 
@@ -77,7 +80,7 @@ function ListRegister() {
                         <th>SerialNo1</th>
                         <th>RegisterID</th>
                         <th>ProductName</th>
-                        <th>Email</th>
+                        <th>ชื่อผู้ลงทะเบียน</th>
                         <th>Date</th>
                         <th>Reason</th>
                     </tr>
@@ -112,6 +115,9 @@ function ListRegister() {
         param.Version = e.target['txtVersion'].value
         param.Edition = e.target['txtEdition'].value
         param.CustomerName = e.target['txtCustomerName'].value
+        param.chkDate = e.target['chkDate'].checked
+        param.dtpStart = e.target['dtpStart'].value
+        param.dtpEnd = e.target['dtpEnd'].value
         param.CustomerID = 0;
         List()
     }
@@ -123,9 +129,10 @@ function ListRegister() {
             <label>ชื่อโปรแกรม : </label><input type="text" name="txtProductName" />
             <label>Version : </label><input type="text" name="txtVersion" />
             <label>Edition : </label><input type="text" name="txtEdition" />
-            <label>Email:</label><input type="text" name="txtCustomerName" required />
+            <label>ชื่อผู้ลงทะเบียน :</label><input type="text" name="txtCustomerName" required />
             <input type="checkbox" name="chkDate" /><label>ช่วงวันที่ : </label>
-            <input type='date'/>
+            <input type='date'name="dtpStart"/>
+            <input type='date'name="dtpEnd"/>
             <button type="submit">ค้นหา</button>
         </form>
     </div>

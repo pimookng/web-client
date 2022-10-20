@@ -54,10 +54,6 @@ function Register(prop) {
 
         if (e.target.Reason.value === '')
             return false
-
-
-
-
     }
 
     return (
@@ -71,12 +67,57 @@ function Register(prop) {
                         </div>
                         <div className="modal-body">
                             <p>
-                                <span className="modal-lable" >Email:</span>
+                                <span className="modal-lable">Serial Number</span>
+                                <input type="text" id="SerialNo" name="SerialNo" cols="50" wrap="soft"
+                                    value={row.SerialNo} readonly = "readonly"/>
+                            </p>
+                            <p>
+                                <span className="modal-lable">RegisterID</span>
+                                <input type="text" id="RegisterID" name="RegisterID" cols="50" wrap="soft"
+                                    value={row.RegisterID} readonly = "readonly"/>
+                            </p>
+                            <p>
+                                <span className="modal-lable">เวอร์ชั่นโปรแกรม</span>
+                                <input type="text" id="ProductName" name="ProductName" cols="50" wrap="soft"
+                                    value={row.ProductName} readonly = "readonly"/>
+                            </p>
+                            <p>
+                                <span className="modal-lable">วันที่ลงทะเบียน</span>
+                                <input type="text" id="Date" name="Date" cols="50" wrap="soft"
+                                    value={row.Date} readonly = "readonly"/>
+                            </p>
+                            <p>
+                                <span className="modal-lable">License</span>
+                                <input type="text" id="License" name="License" cols="50" wrap="soft"
+                                    value={row.License} readonly = "readonly"/>
+                            </p>
+                            <p>
+                                <span className="modal-lable" >ชื่อผู้ลงทะเบียน:</span>
                                 <input class="form-control is-invalid" type="text" id="CustomerName" name="CustomerName" cols="50" wrap="soft"
                                     value={row.CustomerName} onChange={onDataChange} required />
                             </p>
-                            <p><span className="modal-lable">Reason </span>
-                                <textarea id="Reason" name="Reason" cols="50" wrap="soft"
+                            <p>
+                                <span className="modal-lable">เลขบัตรประชาชน</span>
+                                <input type="text" id="CardID" name="CardID" cols="50" wrap="soft"
+                                    value={row.CardID}/>
+                            </p>
+                            <p>
+                                <span className="modal-lable">เบอร์โทรติดต่อ</span>
+                                <input type="text" id="Tel" name="Tel" cols="50" wrap="soft"
+                                    value={row.Tel}/>
+                            </p>
+                            <p>
+                                <span className="modal-lable">Email</span>
+                                <input type="text" id="Email" name="Email" cols="50" wrap="soft"
+                                    value={row.Email}/>
+                            </p>
+                            <p>
+                                <span className="modal-lable">LineID</span>
+                                <input type="text" id="LineID" name="LineID" cols="50" wrap="soft"
+                                    value={row.LineID}/>
+                            </p>
+                            <p><span className="modal-lable">หมายเหตุ</span>
+                                <textarea  id="Reason" name="Reason" cols="50" wrap="soft"
                                     value={row.Reason} onChange={onDataChange} />
                             </p>
                             <p>

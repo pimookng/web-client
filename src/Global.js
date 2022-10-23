@@ -23,8 +23,8 @@ export const style = {
     // component
     Container: () => {
         return styled.div`
-            // position: relative;
-            // width: 100%;
+            position: relative;
+            width: 100%;
          `},
     Bullet: () => styled.img`
             ${style.css.image.size(16)} 

@@ -19,7 +19,16 @@ const CardProduct = {
 
     Detail: function Detail(props) {
         const { row, isShow } = props;
-        const edition = row.editions.map(item => item).reverse()
+        const edition = row.editions.map(item => item).reverse() //std,ex,ent,sql
+
+        // const edition =row.editions
+        let modalStyle = {
+            display: 'block'
+        }
+
+        function onDownload(url) {
+            alert(url)
+        }
 
         let ListEdition = <p>no edition</p>
         let moreDetail = () => {

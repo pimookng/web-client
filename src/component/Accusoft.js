@@ -29,28 +29,11 @@ const HeaderText = styled(HeaderColumn)`
           font-size: ${(props) => { return (props.fontSize + 'px') }}
        `
 
-
-// const HeaderText = styled.div`
-//          position: relative;
-//          display: flex;
-//          width: 100%;
-//          flex-direction: row; 
-//          background: #F00;
-//          flex-direction: column;
-//           border-top-left-radius: 15px;
-//           min-width: 40%;
-//           max-width: 80%;
-//           white-space: nowrap;
-//           overflow: hidden;
-//           text-overflow: ellipsis;
-//           color: #FFF;
-//           font-size: ${(props) => { return (props.fontSize + 'px') }}
-//        `
-
 const HeaderAngle = styled(HeaderColumn)`
-clip - path: polygon(0 0, 100 % 100 %, 0 % 100 %);
-min - width: 10 %;
-max - width: 20 %;
+clip - path: polygon(0 100, 100 % 100 %, 0 % 100 %);
+// min - width: 10 %;
+// max - width: 20 %;
+border: solid #F00 1px;
 `
 
 const Detail = styled.div`

@@ -1,7 +1,8 @@
-import Stock30Detail from "static/product/Stock30Detail";
 import Modal from 'react-bootstrap/Modal'
 import Card from 'react-bootstrap/Card'
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from 'react-bootstrap'
+import ListFeature from "component/ListProductFeature"
+import UIExample from "component/ProductUIExample"
 
 const CardProduct = {
     Main: function Main(props) {
@@ -9,10 +10,8 @@ const CardProduct = {
         return (
             <div>
                 <img src={row.ImageURL} onClick={() => OnOpenDetail(row)} alt='เลือกโปรแกรม' />
-
                 <p>{row.ProductVersionName}</p>
                 <span>{row.Description}</span>
-
             </div>
         )
 
@@ -22,31 +21,26 @@ const CardProduct = {
         const { row, isShow } = props;
         const edition = row.editions.map(item => item).reverse()
 
-        // const edition =row.editions
-        let modalStyle = {
-            display: 'block'
-        }
-
-        function onDownload(url) {
-            alert(url)
-        }
-
         let ListEdition = <p>no edition</p>
-        let moreDetail =()=>{
-            if (row.ProductVersionName==="Stock  3.0"){
-                return <Stock30Detail/>
+        let moreDetail = () => {
+            if (row.ProductName === 'Stock'){
+                return <ListFeature.Stock/>
             }
-            else {
-                return <p>yyyy</p>
+            else if (row.ProductName === 'Car Service'){
+                return <ListFeature.CarService/>
+            }
+            else if (row.ProductName === 'Account'){
+                return <ListFeature.Account/>
             }
         }
+
         if (edition.length > 0)
             ListEdition = (
                 <div>
-                    <Row lg={2} xl={3} style={{display: 'flex', alignContent: 'center'}}>                    
+                    <Row lg={2} xl={3}>                    
                         {edition.map
                             (r =>
-                                <div>
+                                <Col md={6} lg={4} className='mx-auto'>
                                     <Card className="text-center">
                                         <Card.Header>
                                             <Card.Title>
@@ -60,35 +54,14 @@ const CardProduct = {
                                             <Button variant="primary">Download</Button>
                                         </Card.Body>
                                     </Card>
-                                </div>
+                                    <br />
+                                </Col>                                
                             )
                         }
                     </Row>
+                    <UIExample/>                
                     {moreDetail()}
                 </div>
-                
-                // <div>
-                //     <table>
-                //         <tr>
-                //             {
-                //                 edition.map(r =>
-                //                     <td border='1px'>
-                //                         <span>
-                //                             <h3>
-                //                                 <span className="modal-lable" >{r.edition}</span>
-                //                             </h3>
-                //                             <p>
-                //                                 <span className="modal-lable" >ราคา {r.price} บาท</span>
-                //                             </p>
-                //                             <button type="button" onClick={() => onDownload(r.downloadURL)} data-bs-dismiss="modal" aria-label="Download">Download</button>
-                //                         </span>
-
-                //                     </td>
-                //                 )}
-                //         </tr>
-                //     </table>
-                //     {moreDetail()}
-                // </div>
             )
 
         return (
@@ -104,22 +77,6 @@ const CardProduct = {
                     </Container>
                 </Modal.Body>
             </Modal>
-            // <div className="modal show fade" style={modalStyle}>
-            //     <div className="modal-dialog " role="document">
-            //         <div className="modal-content">
-            //             <div className="modal-header" >
-            //                 <h5 className="modal-title">{row.ProductVersionName}</h5>
-            //             </div>
-            //             <div className="modal-body">
-            //                 {ListEdition}
-            //             </div>
-            //             <div className="modal-footer">
-            //                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal"
-            //                     onClick={() => isShow(false)}>ปิด</button>
-            //             </div>
-            //         </div>
-            //     </div>
-            // </div>
         )
     }
 }

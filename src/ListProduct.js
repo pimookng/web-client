@@ -3,16 +3,6 @@ import { useState, useEffect } from "react";
 import CardProduct from 'component/CardProduct'
 
 function ListProduct() {
-    // let productTest = {
-    //     productVersionName: "",
-    //     productThaiName: "",
-    //     version: "",
-    //     edition: {
-    //         edition: "",
-    //         ImageURL: "",
-    //         price: 0
-    //     }
-    // }
 
     const [products, setProduct] = useState([])
     // const [editions, setEdition] = useState([])
@@ -37,7 +27,6 @@ function ListProduct() {
     },)
 
     const frmLookup=(isShowed)=>{
-        // const detail = rowProduct.edition
         setShowModal(isShowed)
     }
 
@@ -59,8 +48,8 @@ function ListProduct() {
         
     return (
         <div>
-            <h3 style={{ textAlign: "center" }}>โปรแกรมธุรกิจ SME</h3>
-            {ListTable}            
+            <h3 className="text-center">โปรแกรมธุรกิจ SME</h3>
+            {ListTable}
             {showModal === true ? <CardProduct.Detail row={selectProduct} isShow={frmLookup} /> : ''}
         </div>
     )

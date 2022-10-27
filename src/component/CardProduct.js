@@ -1,6 +1,3 @@
-import Modal from 'react-bootstrap/Modal'
-import Card from 'react-bootstrap/Card'
-import { Button, Col, Container, Row } from 'react-bootstrap'
 import ListFeature from "component/ListProductFeature"
 import UIExample from "component/ProductUIExample"
 
@@ -9,7 +6,7 @@ const CardProduct = {
         const { row, OnOpenDetail } = props;
         return (
             <div>
-                <img src={row.ImageURL} onClick={() => OnOpenDetail(row)} alt='เลือกโปรแกรม' />
+                <img src={row.ImageURL} onClick={() => OnOpenDetail(row)} alt='เลือกโปรแกรม'/>
                 <p>{row.ProductVersionName}</p>
                 <span>{row.Description}</span>
             </div>
@@ -46,46 +43,52 @@ const CardProduct = {
         if (edition.length > 0)
             ListEdition = (
                 <div>
-                    <Row lg={2} xl={3}>                    
-                        {edition.map
-                            (r =>
-                                <Col md={6} lg={4} className='mx-auto'>
-                                    <Card className="text-center">
-                                        <Card.Header>
-                                            <Card.Title>
-                                                {r.edition}
-                                            </Card.Title>
-                                        </Card.Header>
-                                        <Card.Body>
-                                            <Card.Text className="card-title pricing-card-title">
-                                                ราคา {r.price} บาท
-                                            </Card.Text>
-                                            <Button variant="primary">Download</Button>
-                                        </Card.Body>
-                                    </Card>
-                                    <br />
-                                </Col>                                
-                            )
-                        }
-                    </Row>
-                    <UIExample/>                
+                    <div>
+                        <div className="container py-3">
+                            <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                                {edition.map
+                                    (r =>
+                                        <div className="col col-xs-12 col-md-6 mx-auto">
+                                            <div className="card mb-4 shadow-sm text-center">
+                                                <div className="card-header py-3">
+                                                    <h4 className="my-0 fw-normal">{r.edition}</h4>
+                                                </div>
+                                                <div className="card-body">
+                                                    <h4 className="card-title pricing-card-title"><small class="text-muted fw-light"> ราคา</small> {r.price} <small class="text-muted fw-light"> บาท</small></h4>
+                                                    <button type="button" class="w-100 btn btn-lg btn-primary">Download</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="p-5 mb-4 bg-light rounded-3">
+                        <div className="container-fluid py-5">
+                            
+                        </div>
+                    </div>
+
                     {moreDetail()}
                 </div>
             )
 
         return (
-            <Modal show={isShow} onHide={()=>isShow(false)} size="lg" aria-labelledby="example-modal-sizes-title-lg">
-                <Modal.Header closeButton>
-                    <Modal.Title id="example-modal-sizes-title-lg">
-                        {row.ProductVersionName}
-                    </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <Container>
-                        {ListEdition}
-                    </Container>
-                </Modal.Body>
-            </Modal>
+            <div className="modal fade show modal-lg" role="dialog" aria-hidden="true" tabindex="-1" style={modalStyle}>
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title">{row.ProductVersionName}</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={() => isShow(false)}></button>
+                        </div>
+                        <div className="modal-body">
+                            {ListEdition}
+                        </div>
+                    </div>
+                </div>
+            </div>
         )
     }
 }

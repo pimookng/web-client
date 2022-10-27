@@ -26,7 +26,7 @@ function ListProduct() {
 
     },)
 
-    const frmLookup=(isShowed)=>{
+    const frmLookup = (isShowed) => {
         setShowModal(isShowed)
     }
 
@@ -50,7 +50,7 @@ function ListProduct() {
         <div>
             <h3 className="text-center">โปรแกรมธุรกิจ SME</h3>
             {ListTable}
-            {showModal === true ? <CardProduct.Detail row={selectProduct} isShow={frmLookup} /> : ''}
+            {showModal === true ? <CardProduct.Detail row={selectProduct} isShow={frmLookup} /> : ''}            
         </div>
     )
 }

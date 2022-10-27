@@ -39,17 +39,24 @@ function ListProduct() {
     if (products.length > 0)
         ListTable = (
             <div>
-                    {products.map((r, index) => //r is row
-                        <CardProduct.Main key={index} row={r} OnOpenDetail={OnOpenDetail}/>
-                    )}
-                    <hr/>
+                {products.map((r, index) => //r is row
+                    <CardProduct.Main key={index} row={r} OnOpenDetail={OnOpenDetail}/>
+                )}
             </div>
         )
         
     return (
         <div>
-            <h3 className="text-center">โปรแกรมธุรกิจ SME</h3>
-            {ListTable}
+            <div className="container py-4">
+                <h3 className="text-center">โปรแกรมธุรกิจ SME</h3>
+                <div className="p-5 mb-4 bg-light">
+                    <div className="container-fluid">
+                        {ListTable}                        
+                    </div>
+                </div>
+            </div>
+            
+            
             {showModal === true ? <CardProduct.Detail row={selectProduct} isShow={frmLookup} /> : ''}            
         </div>
     )

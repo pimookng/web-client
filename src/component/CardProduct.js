@@ -6,9 +6,16 @@ const CardProduct = {
         const { row, OnOpenDetail } = props;
         return (
             <div>
-                <img src={row.ImageURL} onClick={() => OnOpenDetail(row)} alt='เลือกโปรแกรม'/>
-                <p>{row.ProductVersionName}</p>
-                <span>{row.Description}</span>
+                <div className="row">
+                    <div className="col-md-4 text-center">
+                        <img className="img-fluid" src={row.ImageURL} onClick={() => OnOpenDetail(row)} alt='เลือกโปรแกรม'/>
+                    </div>
+                    <div className="col-md-8 text-center border">
+                    </div>
+                </div>
+                
+                {/* <p>{row.ProductVersionName}</p>
+                <span>{row.Description}</span> */}
             </div>
         )
 
@@ -67,7 +74,7 @@ const CardProduct = {
 
                     <div className="p-5 mb-4 bg-light rounded-3">
                         <div className="container-fluid py-5">
-                            
+
                         </div>
                     </div>
 

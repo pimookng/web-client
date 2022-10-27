@@ -5,17 +5,17 @@ function ListVDO(){
     const Detail = () => (
         <div>
             
-            <iframe title="สต๊อกสินค้า" width="100%" height="100%" style={{ border: "2px solid lightgray" }} src="https://www.youtube.com/embed/tbXX5HFraUM" allowfullscreen="allowfullscreen"/>     
-            <h6 align="center">โปรแกรมสต๊อกสินค้า 2.0</h6>
+            <iframe title="สต๊อกสินค้า" width="100%" height="100%" style={{ border: "2px solid lightgray" }} src="https://www.youtube.com/embed/tbXX5HFraUM" allowFullScreen/>     
+            <p align="center">โปรแกรมสต๊อกสินค้า 2.0</p>
             <br/>
             <iframe title="ศูนย์ซ่อมรถ" width="100%" height="100%" src="https://www.youtube.com/embed/tbXX5HFraUM" />
-            <h5 align="center">โปรแกรมศูนย์ซ่อมรถ 3.0</h5>
+            <p align="center">โปรแกรมศูนย์ซ่อมรถ 3.0</p>
         </div>
     )
 
 return(
-    <div class="mx-auto" style={{ width: "80%" }}>
-    <Accusoft.Box title="สอนการใช้งาน" fontSize="24" detail={Detail()} />
+    <div className="mx-auto" style={{ width: "90%" }}>
+    <Accusoft.Box title="สอนการใช้งาน" fontSize="" detail={Detail()} />
 </div>
 )
 }

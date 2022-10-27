@@ -16,9 +16,8 @@ function ListNews(){
         )
     }
     return(
-        <div class="mx-auto" style={{ width: "80%" }}>
-            <Accusoft.Box title="ข่าวล่าสุด" detail={detail()}/>
-        {/* <Accusoft.Box Title="What New" Detail={Detail()} /> */}
+        <div className="mx-auto" style={{ width: "90%" }}>
+            <Accusoft.Box title="ข่าวล่าสุด" detail={detail()}/>        
         </div>
     )
 }

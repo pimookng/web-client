@@ -1,5 +1,4 @@
 import styled,{css} from "styled-components";
-
 export const globalVar = {
     URL: {
         // Server: "http://localhost:5000/"

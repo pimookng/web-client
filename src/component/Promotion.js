@@ -17,26 +17,24 @@ const Promotion = {
     Main: function Main(props) {
         const {title,image,detail,priceText}=props;
 
-
-
         return (
             <TopRoundBox radius="10">
-            <div class="row">
-                <div class="col-sm ">
+            <div className="row">
+                <div className="col-md">
                     <ImgTopRound radius="10" src={image}/> 
                 </div>
-                <div class="col-sm" >
+                <div className="col-md" >
                     <h5 align="right">{title}&emsp;</h5>
                     <hr />
                     <p align="right">&emsp;&emsp;{detail}</p>
                 </div>
 
             </div>
-            <div class="row footer1">
-                <div class="col-sm">
+            <div className="row footer1">
+                <div className="col-md">
                     {/* {Link} */}
                 </div>
-                <div class="col-sm">
+                <div className="col-md">
                     <h5 align="right" >{priceText}</h5>
                 </div>
             </div>

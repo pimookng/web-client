@@ -1,0 +1,12 @@
+{
+    "Image": {
+        "svg": {
+            "Youtube": "https://visualpharm.com/assets/643/YouTube%202-595b40b85ba036ed117dae8f.svg",
+            "Facebook": "https://upload.wikimedia.org/wikipedia/commons/archive/c/c2/20130621042901%21F_icon.svg",
+            "Line": "https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg",
+            "Email": "\\image\\Email.svg",
+            "HamburgerMenu": "\\image\\HamburgerMenu.svg",
+            "Next": "\\image\\svg\\Next.svg"
+        }
+    }
+}

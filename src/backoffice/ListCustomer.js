@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 import Customer from 'backoffice/Customer';
 import { PostSave, Fetch_List } from 'lib/Http';
-import { Row } from "react-bootstrap";
 function ListCustomer() {
 
     //== state ==

@@ -28,9 +28,9 @@ function Home() {
         <Container>
             <Row>
                 <Column><div><p>menu</p></div></Column>
-                <Column>
-                    <MainPromotion />
-                </Column>
+                    <Column>
+                        <MainPromotion />
+                    </Column>
                 <Column>
                     <Row>
                         <Column><Bullet src={i.Next}></Bullet></Column>

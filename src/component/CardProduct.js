@@ -6,16 +6,26 @@ const CardProduct = {
         const { row, OnOpenDetail } = props;
         return (
             <div>
-                <div className="row">
+                <div className="row py-4 mb-1">
                     <div className="col-md-4 text-center">
-                        <img className="img-fluid" src={row.ImageURL} onClick={() => OnOpenDetail(row)} alt='เลือกโปรแกรม'/>
+                        <img className="img-fluid mb-4" src={row.ImageURL} onClick={() => OnOpenDetail(row)} alt='เลือกโปรแกรม'/>
                     </div>
-                    <div className="col-md-8 text-center border">
+                    <div className="col-md-8 rounded-3 border shadow-lg">
+                        <div>
+                            <div className="col-12">
+                                <h5 className="p-2">{row.ProductVersionName}</h5>
+                            </div>
+                            <div className="col-md-12">
+                                <div className="p-4">
+                                    <p>{row.Description}</p>                                    
+                                </div>
+                                <div className="text-end">
+                                    <button class="btn btn-outline-secondary" type="button" onClick={() => OnOpenDetail(row)}>More Info.</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                {/* <p>{row.ProductVersionName}</p>
-                <span>{row.Description}</span> */}
             </div>
         )
 
@@ -58,7 +68,7 @@ const CardProduct = {
                                         <div className="col col-xs-12 col-md-6 mx-auto">
                                             <div className="card mb-4 shadow-sm text-center">
                                                 <div className="card-header py-3">
-                                                    <h4 className="my-0 fw-normal">{r.edition}</h4>
+                                                    <h4 className="my-0 fw-normal text-uppercase">{r.edition}</h4>
                                                 </div>
                                                 <div className="card-body">
                                                     <h4 className="card-title pricing-card-title"><small class="text-muted fw-light"> ราคา</small> {r.price} <small class="text-muted fw-light"> บาท</small></h4>
@@ -71,19 +81,21 @@ const CardProduct = {
                             </div>
                         </div>
                     </div>
-
-                    <div className="p-5 mb-4 bg-light rounded-3">
-                        <div className="container-fluid py-5">
-
+                    <div className="p-2 mb-4 bg-light rounded-3 border">
+                        <div className="container">
+                            <div className="col-12">
+                                <div className="embed-responsive embed-responsive-16by9">
+                                    <iframe className="embed-responsive-item" width={'100%'} height={'100%'} src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowFullScreen></iframe>
+                                </div>
+                            </div>                            
                         </div>
                     </div>
-
                     {moreDetail()}
                 </div>
             )
 
         return (
-            <div className="modal fade show modal-lg" role="dialog" aria-hidden="true" tabindex="-1" style={modalStyle}>
+            <div className="modal fade show modal-lg " role="dialog" aria-hidden="true" tabindex="-1" style={modalStyle}>
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -92,6 +104,7 @@ const CardProduct = {
                         </div>
                         <div className="modal-body">
                             {ListEdition}
+                            
                         </div>
                     </div>
                 </div>

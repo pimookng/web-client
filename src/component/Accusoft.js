@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { style } from "Global"
 
-
+//` called is backtick, alt+96
 const Container = style.Container();
 const Header = styled.div`
             position: relative;
@@ -62,7 +62,6 @@ const Accusoft = {
                         {detail}
                     </Detail>
                 </Container>
-
             </div>
 
 

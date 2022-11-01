@@ -59,8 +59,6 @@ header {
   position: absolute !important;
   top: -9999px !important;
   width: -9999px !important;
-  position: absolute;
-  right: 0px;
 }
 
 .nav-toggle-label {

@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 	font-family: arial, sans-serif;
 } */
-.header {
+.SideHeader {
 	padding: 1px 1px;
 	background: #23242b;
 	color: #fff;
@@ -16,12 +16,12 @@
 .u-name b {
 	color: #127b8e;
 }
-.header i {
+.SideHeader i {
 	font-size: 30px;
 	cursor: pointer;
 	color: #fff;
 }
-.header i:hover {
+.SideHeader i:hover {
 	color: #127b8e;
 }
 

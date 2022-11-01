@@ -32,7 +32,7 @@ function Home() {
                 <Column>
                     <div>
                         <input type="checkbox" id="checkbox"></input>
-                        <header className="header">
+                        <header className="SideHeader">
                             <label htmlFor="checkbox">
                                 <i id="navbtn" className="fa fa-bars" aria-hidden="true"></i>
                             </label>

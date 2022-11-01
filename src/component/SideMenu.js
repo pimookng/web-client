@@ -9,7 +9,7 @@ function SideMenu() {
 
         <div className="body">
             <nav className="side-bar">
-                <ul>
+                <ul >
                     <li>
                         <a href="#">
                             <i className="fa fa-desktop" aria-hidden="true"></i>

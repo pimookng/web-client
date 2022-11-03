@@ -46,7 +46,7 @@ const CardProduct = {
 
         let ListEdition = <p>no edition</p>
         let moreDetail = () => {
-            if (row.ProductName === 'Stock'){
+            if (row.ProductVersionName === 'Stock 3.0'){
                 return <ListFeature.Stock/>
             }
             else if (row.ProductName === 'Car Service'){

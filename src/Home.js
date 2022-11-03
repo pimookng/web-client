@@ -3,6 +3,8 @@ import ListVDO from "page/ListVDO";
 import MainPromotion from "page/MainPromotion";
 import styled from "styled-components";
 import { style } from "Global"
+import SideMenu from "component/SideMenu";
+
 var v = require("Variable.json");
 const Container = style.Container();
 const Flex = styled.div`
@@ -27,10 +29,21 @@ function Home() {
     return (
         <Container>
             <Row>
-                <Column><div><p>menu</p></div></Column>
-                    <Column>
-                        <MainPromotion />
-                    </Column>
+                <Column>
+                    <div>
+                        <input type="checkbox" id="checkbox"></input>
+                        <header className="SideHeader">
+                            <label htmlFor="checkbox">
+                                <i id="navbtn" className="fa fa-bars" aria-hidden="true"></i>
+                            </label>
+                        </header>
+                        <SideMenu />
+                    </div>
+
+                </Column>
+                <Column>
+                    <MainPromotion />
+                </Column>
                 <Column>
                     <Row>
                         <Column><Bullet src={i.Next}></Bullet></Column>

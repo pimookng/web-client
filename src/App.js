@@ -1,5 +1,5 @@
 import './App.css';
-import {Link,Route,Routes}  from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import Home from "./Home"
 import ListProduct from "./ListProduct"
 import ListRegister from './backoffice/ListRegister'

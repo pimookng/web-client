@@ -1,6 +1,7 @@
 import { Fetch_List } from "lib/Http";
 import { useState, useEffect } from "react";
 import CardProduct from 'component/CardProduct'
+import Accusoft from "component/Accusoft";
 
 function ListProduct() {
 
@@ -44,21 +45,26 @@ function ListProduct() {
                 )}
             </div>
         )
-        
-    return (
-        <div>
-            <div className="container py-4">
-                <h3 className="text-center">โปรแกรมธุรกิจ SME</h3>
-                <div className="p-4 py-1 mb-4 bg-light rounded-3">
-                    <div className="container-fluid">
-                        {ListTable}                        
+    
+        const Detail = () => (
+            <div>
+                <div className="container py-4">
+                    <div className="p-4 py-1 mb-4 bg-light rounded-3">
+                        <div className="container-fluid">
+                            {ListTable}                        
+                        </div>
                     </div>
                 </div>
+                
+                
+                {showModal === true ? <CardProduct.Detail row={selectProduct} isShow={frmLookup} /> : ''}
             </div>
-            
-            
-            {showModal === true ? <CardProduct.Detail row={selectProduct} isShow={frmLookup} /> : ''}
+        )
+    return (
+        <div className="container">
+            <Accusoft.Box title="โปรแกรมธุรกิจ SME" detail={Detail()} />
         </div>
+        
     )
 }
 

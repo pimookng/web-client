@@ -19,7 +19,7 @@ const CardProduct = {
                                 <div className="p-4">
                                     <p>{row.Description}</p>                                    
                                 </div>
-                                <div className="text-end">
+                                <div className="text-center text-md-end mb-3">
                                     <button class="btn btn-outline-secondary" type="button" onClick={() => OnOpenDetail(row)}>More Info.</button>
                                 </div>
                             </div>
@@ -81,6 +81,7 @@ const CardProduct = {
                             </div>
                         </div>
                     </div>
+
                     <div className="p-2 mb-4 bg-light rounded-3 border">
                         <div className="container">
                             <div className="col-12">
@@ -90,6 +91,7 @@ const CardProduct = {
                             </div>                            
                         </div>
                     </div>
+                    <UIExample />
                     {moreDetail()}
                 </div>
             )

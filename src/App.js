@@ -3,7 +3,8 @@ import {Link,Route,Routes}  from 'react-router-dom';
 import Home from "./Home"
 import ListProduct from "./ListProduct"
 import ListRegister from './backoffice/ListRegister'
-import ListCustomer from 'backoffice/ListCustomer';
+import ListCustomer from 'backoffice/ListCustomer'
+import Product from 'backoffice/ListProduct'
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
           <li>
             <Link to="/listCustomer">Customer</Link>
           </li>
+          <li>
+            <Link to="backoffice/listProduct">Product</Link>
+          </li>
         </ul>
       </nav>
       <hr/>
@@ -29,7 +33,8 @@ function App() {
   <Route path="/" element={<Home/>}></Route>
   <Route path="/listProduct" element={<ListProduct/>}></Route>
   <Route path="/listRegister" element={<ListRegister/>}></Route>  
-  <Route path="/listCustomer" element={<ListCustomer/>}></Route>  
+  <Route path="/listCustomer" element={<ListCustomer/>}></Route>
+  <Route path="/backoffice/listProduct" element={<Product/>}></Route>
 </Routes>
     </div>
   );

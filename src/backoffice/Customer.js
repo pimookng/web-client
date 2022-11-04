@@ -31,7 +31,7 @@ function Customer(prop) {
 
     return (
         <form className="was-validated" onSubmit={OnSave}>
-            <div className="modal show fade" style={modalStyle}>
+            <div className="modal modal-xl show fade" style={modalStyle}>
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content container">
                         <div className="modal-header">
@@ -41,42 +41,46 @@ function Customer(prop) {
                         <div className="modal-body">
                             <div className="container mb-3">
                                 <div className="row g-3">
-                                    <div className="col-md-4">
-                                        <div className="form-floating">
-                                            <input type="text" className="form-control" id="floatingCustomerCode" name="CustomerCode" placeholder="รหัสลูกค้า" value={row.CustomerCode} onChange={onDataChange}></input>
-                                            <label for="floatingCustomerCode">รหัสลูกค้า</label>
+                                    <div className="col-md-4 mb-2">
+                                        <div className="input-group">
+                                            <label className="input-group-text">รหัสลูกค้า</label>
+                                            <input type="text" className="form-control" id="floatingCustomerCode" name="CustomerCode" value={row.CustomerCode} onChange={onDataChange}></input>
                                         </div>
                                     </div>
-                                    <div className="col-md-8">
-                                        <div className="form-floating">
-                                            <input type="text" className="form-control" id="floatingCustomerName" name="CustomerName" placeholder="ชื่อลูกค้า" value={row.CustomerName} onChange={onDataChange} required></input>
-                                            <label for="floatingCustomerName">ชื่อลูกค้า</label>
-                                            <div className="invalid-feedback">กรุณากรอกชื่อลูกค้า</div>
+                                    <div className="col-md-8 mb-2">
+                                        <div className="input-group">
+                                            <label className="input-group-text">ชื่อลูกค้า</label>
+                                            <input type="text" className="form-control" id="floatingCustomerName" name="CustomerName" value={row.CustomerName} onChange={onDataChange} required></input>
                                         </div>
                                     </div>
-                                    <div className="col-md-12">
-                                        <div className="form-floating">
-                                            <input type="text" className="form-control" id="floatingCompanyName" name="CompanyName" placeholder="ชื่อบริษัท" value={row.CompanyName} onChange={onDataChange} required></input>
-                                            <label for="floatingCompanyName">ชื่อบริษัท</label>
-                                            <div className="invalid-feedback">กรุณากรอกชื่อบริษัท</div>
+                                    <div className="col-md-8 mb-2">
+                                        <div className="input-group">
+                                            <label className="input-group-text">ชื่อบริษัท</label>
+                                            <input type="text" className="form-control" id="floatingCompanyName" name="CompanyName" value={row.CompanyName} onChange={onDataChange} required></input>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
-                                        <div className="form-floating">
-                                            <input type="text" className="form-control" id="floatingTel" name="Tel" placeholder="เบอร์โทรติดต่อ" value={row.Tel} onChange={onDataChange} required></input>
-                                            <label for="floatingTel">เบอร์โทรติดต่อ</label>
+                                    <div className="col-md-12 mb-2">
+                                        <div className="input-group">
+                                            <label className="input-group-text">ที่อยู่</label>
+                                            <textarea className="form-control" aria-label="With Address"></textarea>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
-                                        <div className="form-floating">
-                                            <input type="text" className="form-control" id="floatingLineID" name="LineID" placeholder="LineID" value={row.LineID} onChange={onDataChange}></input>
-                                            <label for="floatingLineID">LineID</label>
+                                    <div className="col-md-4 mb-2">
+                                        <div className="input-group">
+                                            <label className="input-group-text">เบอร์โทรติดต่อ</label>
+                                            <input type="text" className="form-control" id="floatingTel" name="Tel" value={row.Tel} onChange={onDataChange} required></input>
                                         </div>
                                     </div>
-                                    <div className="col-md-12">
-                                        <div className="form-floating">
+                                    <div className="col-md-5 mb-2">
+                                        <div className="input-group">
+                                            <label className="input-group-text">LineID</label>
+                                            <input type="text" className="form-control" id="floatingLineID" name="LineID" value={row.LineID} onChange={onDataChange}></input>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-7 mb-2">
+                                        <div className="input-group">
+                                            <label className="input-group-text">Email</label>
                                             <input type="email" className="form-control" id="floatingEmail" name="Email" placeholder="Email" value={row.Email} onChange={onDataChange}></input>
-                                            <label for="floatingEmail">Email</label>
                                         </div>
                                     </div>
 

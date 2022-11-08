@@ -13,19 +13,23 @@ function ListCustomer() {
         CompanyName: "",
         Tel: "",
         LineID: "",
-        Email: ""
+        Email: "",
+        Province: "",
+        ZipCode: "",
+        Address: "",
+        CustomerID: 0
     })
     const [showModal, setShowModal] = useState(false); //look form
 
     //== search ==
     const param = {
-        CustomerName: '',
-        CompanyName: '',
-        Tel: '',
-        Email: '',
-        LineID: '',
-        CustomerAddressProvince: '',
-        CustomerAddressZipCode: ''
+        CustomerName: "",
+        CompanyName: "",
+        Tel: "",
+        LineID: "",
+        Email: "",
+        Province: "",
+        ZipCode: ""
     }
 
     function List() {
@@ -42,14 +46,14 @@ function ListCustomer() {
     }
 
     //== edit,delete ==
-    const OnEdit = (Row) => {
-        setSelectedRow(Row)
+    const OnEdit = (row) => {
+        setSelectedRow(row)
         return frmLookup(true)
     }
 
     const OnDelete = (index) => {
         if (window.confirm('ต้องการลบ ข้อมูล?')) {
-            PostSave('Register/Save', data[index], true)
+            PostSave('Customer/Save', data[index], true)
                 .then((result) => {
                     if (result === "") { //delete success
                         const newData = { ...data }
@@ -78,6 +82,7 @@ function ListCustomer() {
                         <th>Line</th>
                         <th>จังหวัด</th>
                         <th>#</th>
+                        <th>#</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -89,10 +94,13 @@ function ListCustomer() {
                             <td>{r.Tel}</td>
                             <td>{r.Email}</td>
                             <td>{r.LineID}</td>
-                            <td className="text-center">{r.CustomerAddressProvince}</td>
+                            <td className="text-center">{r.Province}</td>
                             <td className="text-center">
                                 <button className="btn btn-primary" data-toggle="modal" data-target="#ModalDialog"
-                                    onClick={() => OnEdit(r)}>edit</button> {" "}
+                                    onClick={() => OnEdit(r)}>Edit</button> {" "}
+                            </td>
+                            <td className="text-center">
+                                <button className="btn btn-danger" onClick={() => OnDelete(index)}>Remove</button>
                             </td>
                         </tr>
                     )}
@@ -107,8 +115,8 @@ function ListCustomer() {
         param.Tel = e.target['Tel'].value
         param.Email = e.target['Email'].value
         param.LineID = e.target['LineID'].value
-        param.CustomerAddressProvince = e.target['CustomerAddressProvince'].value
-        param.CustomerAddressZipCode = e.target['CustomerAddressZipCode'].value
+        param.Province = e.target['Province'].value
+        param.ZipCode = e.target['ZipCode'].value
         List()
     }
 
@@ -146,20 +154,23 @@ function ListCustomer() {
                         <input type="text" name="LineID" className="form-control"></input>
                     </div>
                 </div>
-                <div className="col-md-5">
+                <div className="col-md-4">
                     <div className="input-group">
                         <label className="input-group-text">จังหวัด</label>
-                        <input type="text" name="CustomerAddressProvince" className="form-control"></input>
+                        <input type="text" name="Province" className="form-control"></input>
                     </div>
                 </div>
-                <div className="col-md-5">
+                <div className="col-md-4">
                     <div className="input-group">
                         <label className="input-group-text">รหัสไปรษณีย์</label>
-                        <input type="text" name="CustomerAddressZipCode" className="form-control"></input>
+                        <input type="text" name="ZipCode" className="form-control"></input>
                     </div>
                 </div>
                 <div className="col-md-2">
                     <button type="submit" className="btn btn-outline-primary form-control">ค้นหา</button>
+                </div>
+                <div className="col-md-2">
+                    <button type="add" className="btn btn-success form-control" onClick={() => OnEdit(0)}>เพิ่ม</button>
                 </div>
             </div>
         </form>

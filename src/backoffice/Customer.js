@@ -41,46 +41,58 @@ function Customer(prop) {
                         <div className="modal-body">
                             <div className="container mb-3">
                                 <div className="row g-3">
-                                    <div className="col-md-4 mb-2">
+                                    <div className="col-sm-12 col-lg-4 mb-2">
                                         <div className="input-group">
                                             <label className="input-group-text">รหัสลูกค้า</label>
-                                            <input type="text" className="form-control" id="floatingCustomerCode" name="CustomerCode" value={row.CustomerCode} onChange={onDataChange}></input>
+                                            <input type="text" className="form-control" id="CustomerCode" name="CustomerCode" value={row.CustomerCode} onChange={onDataChange} required></input>
                                         </div>
                                     </div>
-                                    <div className="col-md-8 mb-2">
+                                    <div className="col-sm-12 col-lg-8 mb-2">
                                         <div className="input-group">
                                             <label className="input-group-text">ชื่อลูกค้า</label>
-                                            <input type="text" className="form-control" id="floatingCustomerName" name="CustomerName" value={row.CustomerName} onChange={onDataChange} required></input>
+                                            <input type="text" className="form-control" id="CustomerName" name="CustomerName" value={row.CustomerName} onChange={onDataChange} required></input>
                                         </div>
                                     </div>
-                                    <div className="col-md-8 mb-2">
+                                    <div className="col-md-12 mb-2">
                                         <div className="input-group">
                                             <label className="input-group-text">ชื่อบริษัท</label>
-                                            <input type="text" className="form-control" id="floatingCompanyName" name="CompanyName" value={row.CompanyName} onChange={onDataChange} required></input>
+                                            <input type="text" className="form-control" id="CompanyName" name="CompanyName" value={row.CompanyName} onChange={onDataChange} required></input>
                                         </div>
                                     </div>
                                     <div className="col-md-12 mb-2">
                                         <div className="input-group">
                                             <label className="input-group-text">ที่อยู่</label>
-                                            <textarea className="form-control" aria-label="With Address"></textarea>
+                                            <textarea className="form-control" aria-label="With Address" id="Address" name="Address" value={row.Address} onChange={onDataChange}></textarea>
                                         </div>
                                     </div>
-                                    <div className="col-md-4 mb-2">
+                                    <div className="col-md-12 col-lg-6 mb-2">
+                                        <div className="input-group">
+                                            <label className="input-group-text">จังหวัด</label>
+                                            <input type="text" className="form-control" id="Province" name="Province" value={row.Province} onChange={onDataChange}></input>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-12 col-lg-6 mb-2">
+                                        <div className="input-group">
+                                            <label className="input-group-text">รหัสไปรษณีย์</label>
+                                            <input type="text" className="form-control" id="ZipCode" name="ZipCode" value={row.ZipCode} onChange={onDataChange}></input>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-12 col-lg-6 mb-2">
                                         <div className="input-group">
                                             <label className="input-group-text">เบอร์โทรติดต่อ</label>
                                             <input type="text" className="form-control" id="floatingTel" name="Tel" value={row.Tel} onChange={onDataChange} required></input>
                                         </div>
                                     </div>
-                                    <div className="col-md-5 mb-2">
+                                    <div className="col-md-12 col-lg-6 mb-2">
                                         <div className="input-group">
                                             <label className="input-group-text">LineID</label>
                                             <input type="text" className="form-control" id="floatingLineID" name="LineID" value={row.LineID} onChange={onDataChange}></input>
                                         </div>
                                     </div>
-                                    <div className="col-md-7 mb-2">
+                                    <div className="col-md-12 mb-2">
                                         <div className="input-group">
                                             <label className="input-group-text">Email</label>
-                                            <input type="email" className="form-control" id="floatingEmail" name="Email" placeholder="Email" value={row.Email} onChange={onDataChange}></input>
+                                            <input type="email" className="form-control" id="floatingEmail" name="Email" placeholder="Email" value={row.Email} onChange={onDataChange} required></input>
                                         </div>
                                     </div>
 

@@ -5,13 +5,13 @@ function ListProduct() {
     let SearchBar = (
         <form className="mb-3">
             <div className="row g-3">
-                <div className="col-md-5">
+                <div className="col-md-4 col-xl-7">
                     <div className="input-group">
-                        <label className="input-group-text">ชื่อโปรแกรม</label>
+                        <label className="input-group-text">โปรแกรม</label>
                         <input type="text" name="ProductName" className="form-control"></input>
                     </div>
                 </div>
-                <div className="col-md-2">
+                <div className="col-md-3 col-xl-2">
                     <div className="input-group">
                         <label className="input-group-text">Version</label>
                         <select className="form-select">
@@ -22,7 +22,7 @@ function ListProduct() {
                         </select>
                     </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 col-xl-2">
                     <div className="input-group">
                         <label className="input-group-text">Edition</label>
                         <select className="form-select">
@@ -33,7 +33,7 @@ function ListProduct() {
                         </select>
                     </div>
                 </div>
-                <div className="col-md-2">
+                <div className="col-md-2 col-xl-1">
                     <button type="submit" className="btn btn-outline-primary form-control">ค้นหา</button>
                 </div>
             </div>

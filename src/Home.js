@@ -1,6 +1,7 @@
 import ListNews from "page/ListNew";
 import ListVDO from "page/ListVDO";
 import MainPromotion from "page/MainPromotion";
+import NewPromotion from "page/NewPromotion";
 import styled from "styled-components";
 import { style } from "Global"
 // import SideMenu from "component/SideMenu";
@@ -42,7 +43,7 @@ function Home() {
 
                 </Column>
                 <Column>
-                    {/* <NewPromotion/> */}
+                    <NewPromotion/>
                     <MainPromotion />
                 </Column>
                 <Column>

@@ -147,12 +147,14 @@ nav a:hover {
     display: none;
   }
 
-  /* header {
+  header {
     display: grid;
     grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
     background: var(--BloodRed);
   } */
 
+  }
+  
   .logo {
     color: white;
     grid-column: 2 / 3;

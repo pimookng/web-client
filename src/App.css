@@ -34,6 +34,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -55,7 +56,7 @@ header {
   color: white;
 }
 
-.nav-toggle{
+.nav-toggle {
   position: absolute !important;
   top: -9999px !important;
   width: -9999px !important;
@@ -103,23 +104,23 @@ nav {
   left: 0;
   background: var(--BloodRed);
   width: 100%;
-  transform: scale(1,0);
+  transform: scale(1, 0);
   transform-origin: top;
   transition: transform 400ms ease-in-out;
 }
 
-nav ul{
+nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-nav li{
+nav li {
   margin-bottom: 1em;
   margin-left: 1em;
 }
 
-nav a{
+nav a {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
@@ -128,50 +129,50 @@ nav a{
   transition: opacity 150ms ease-in-out;
 }
 
-nav a:hover{
+nav a:hover {
   color: #000;
 }
 
-.nav-toggle:checked ~ nav {
-  transform: scale(1,1);
+.nav-toggle:checked~nav {
+  transform: scale(1, 1);
 }
 
-.nav-toggle:checked ~ nav a {
+.nav-toggle:checked~nav a {
   opacity: 1;
   transition: opacity 250ms ease-in-out 250ms;
 }
 
-@media screen and (min-width: 680px){
-.nav-toggle-label{
-  display: none;
-}
+@media screen and (min-width: 720px) {
+  .nav-toggle-label {
+    display: none;
+  }
 
   /* header {
     display: grid;
     grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
     background: var(--BloodRed);
   } */
-  
+
   .logo {
     color: white;
     grid-column: 2 / 3;
   }
-  
+
   nav {
     position: relative;
     text-align: left;
     transition: none;
-    transform: scale(1,1);
+    transform: scale(1, 1);
     background: none;
     top: initial;
     left: initial;
-    
+
     grid-column: 3 / 4;
     display: flex;
     justify-content: flex-end;
     align-items: center;
   }
-  
+
   nav ul {
     margin: 0;
     padding: 0;
@@ -179,12 +180,12 @@ nav a:hover{
     display: flex;
     justify-content: flex-end;
   }
-  
+
   nav li {
     margin-bottom: 0;
     margin-left: 2em;
   }
-  
+
   nav a {
     color: white;
     text-decoration: none;
@@ -194,11 +195,11 @@ nav a:hover{
     transition: opacity 150ms ease-in-out;
     position: relative;
   }
-  
+
   nav a:hover {
     color: #000;
   }
-  
+
   nav a::before {
     content: '';
     display: block;
@@ -211,8 +212,8 @@ nav a:hover{
     transform: scale(0, 1);
     transition: transform ease-in-out 250ms;
   }
-  
+
   nav a:hover::before {
-    transform: scale(1,1);
+    transform: scale(1, 1);
   }
 }

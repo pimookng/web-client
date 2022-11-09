@@ -3,7 +3,7 @@ import ListVDO from "page/ListVDO";
 import MainPromotion from "page/MainPromotion";
 import styled from "styled-components";
 import { style } from "Global"
-import SideMenu from "component/SideMenu";
+// import SideMenu from "component/SideMenu";
 
 var v = require("Variable.json");
 const Container = style.Container();
@@ -30,7 +30,7 @@ function Home() {
         <Container>
             <Row>
                 <Column>
-                    <div>
+                    {/* <div>
                         <input type="checkbox" id="checkbox"></input>
                         <header className="SideHeader">
                             <label htmlFor="checkbox">
@@ -38,10 +38,11 @@ function Home() {
                             </label>
                         </header>
                         <SideMenu />
-                    </div>
+                    </div> */}
 
                 </Column>
                 <Column>
+                    {/* <NewPromotion/> */}
                     <MainPromotion />
                 </Column>
                 <Column>

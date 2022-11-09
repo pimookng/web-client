@@ -108,7 +108,7 @@ nav {
   transition: transform 400ms ease-in-out;
 }
 
-/* nav ul{
+nav ul{
   margin: 0;
   padding: 0;
   list-style: none;
@@ -117,7 +117,7 @@ nav {
 nav li{
   margin-bottom: 1em;
   margin-left: 1em;
-} */
+}
 
 nav a{
   color: white;
@@ -146,11 +146,11 @@ nav a:hover{
   display: none;
 }
 
-  header {
+  /* header {
     display: grid;
     grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
     background: var(--BloodRed);
-  }
+  } */
   
   .logo {
     color: white;
@@ -205,7 +205,7 @@ nav a:hover{
     height: 5px;
     background: black;
     position: absolute;
-    top: -.75em;
+    bottom: -.75em;
     left: 0;
     right: 0;
     transform: scale(0, 1);

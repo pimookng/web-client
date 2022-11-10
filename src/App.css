@@ -142,9 +142,9 @@ nav a:hover{
 }
 
 @media screen and (min-width: 680px){
-.nav-toggle-label{
-  display: none;
-}
+  .nav-toggle-label{
+    display: none;
+  }
 
   header {
     display: grid;

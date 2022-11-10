@@ -57,7 +57,7 @@ function ListProduct() {
                 </div>
                 
                 
-                {showModal === true ? <CardProduct.Detail row={selectProduct} isShow={frmLookup} /> : ''}
+                {showModal === true ? <CardProduct.Detail row={selectProduct} isShow={frmLookup}/> : ''}
             </div>
         )
     return (

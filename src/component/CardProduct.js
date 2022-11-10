@@ -20,7 +20,7 @@ const CardProduct = {
                                     <p>{row.Description}</p>                                    
                                 </div>
                                 <div className="text-center text-md-end mb-3">
-                                    <button class="btn btn-outline-secondary" type="button" onClick={() => OnOpenDetail(row)}>More Info.</button>
+                                    <button className="btn btn-outline-secondary" type="button" onClick={() => OnOpenDetail(row)}>More Info.</button>
                                 </div>
                             </div>
                         </div>
@@ -35,7 +35,6 @@ const CardProduct = {
         const { row, isShow } = props;
         const edition = row.editions.map(item => item).reverse() //std,ex,ent,sql
 
-        // const edition =row.editions
         let modalStyle = {
             display: 'block'
         }
@@ -71,8 +70,8 @@ const CardProduct = {
                                                     <h4 className="my-0 fw-normal text-uppercase">{r.edition}</h4>
                                                 </div>
                                                 <div className="card-body">
-                                                    <h4 className="card-title pricing-card-title"><small class="text-muted fw-light"> ราคา</small> {r.price} <small class="text-muted fw-light"> บาท</small></h4>
-                                                    <button type="button" class="w-100 btn btn-lg btn-primary">Download</button>
+                                                    <h4 className="card-title pricing-card-title"><small className="text-muted fw-light"> ราคา</small> {r.price} <small className="text-muted fw-light"> บาท</small></h4>
+                                                    <button type="button" className="w-100 btn btn-lg btn-primary">Download</button>
                                                 </div>
                                             </div>
                                         </div>

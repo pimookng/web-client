@@ -1,5 +1,6 @@
 import { PostSave, Fetch_List } from 'lib/Http';
 import { useState } from 'react';
+import Product from './Product';
 function ListProduct() {
 
     //== state ==
@@ -35,8 +36,8 @@ function ListProduct() {
     }
 
     //== edit,delete ==
-    const OnEdit = (Row) => {
-        setSelectedRow(Row)
+    const OnEdit = (row) => {
+        setSelectedRow(row)
         return frmLookup(true)
     }
 
@@ -56,8 +57,20 @@ function ListProduct() {
         }
     }
 
-    const Edition = ['Standard','Excellent','Enterprise']
-    const Version = ['1.0','2.0','3.0','4.0']
+    const Edition = [
+        {label: 'ทั้งหมด', value: ''},
+        {label: 'Standard', value: 'Standard'},
+        {label: 'Excellent', value: 'Excellent'},
+        {label: 'Enterprise', value: 'Enterprise'}
+    ]
+    
+    const Version = [
+        {label: 'ทั้งหมด', value: ''},
+        {label: '1.0', value: '1.0'},
+        {label: '2.0', value: '2.0'},
+        {label: '3.0', value: '3.0'},
+        {label: '4.0', value: '4.0'}
+    ]
 
     let ListTable = <p className='text-center'>No data</p>
     if (data.length > 0)
@@ -79,9 +92,10 @@ function ListProduct() {
                             <td className='text-center'>{r.ProductCode}</td>
                             <td>{r.ProductFullName}</td>
                             <td className='text-center'>{r.Version}</td>
-                            <td className='text-center'>{r.Edition}</td>
+                            <td className='text-center text-capitalize'>{r.Edition}</td>
                             <td className='text-center'>
-                                <button className='btn btn-primary' data-toggle='modal' data-target='#Modal-Dialog' onClick={() => OnEdit(r)}>Edit</button>
+                                <button className='btn btn-primary' data-toggle='modal' data-target='#ModalDialog'
+                                    onClick={() => OnEdit(r)}>Edit</button> {' '}
                             </td>
                             <td className='text-center'>
                                 <button className="btn btn-danger" onClick={() => OnDelete(index)}>Remove</button>
@@ -94,7 +108,7 @@ function ListProduct() {
 
     const OnSearch = e => {
         e.preventDefault()
-        param.ProductVersionName = e.target['ProductVersionName'].value
+        param.ProductFullName = e.target['ProductFullName'].value
         param.Edition = e.target['Edition'].value
         param.Version = e.target['Version'].value
         List()
@@ -105,16 +119,15 @@ function ListProduct() {
                 <div className='col-md-12 col-lg-4 col-xl-6'>
                     <div className='input-group'>
                         <label className='input-group-text'>โปรแกรม</label>
-                        <input type='text' name='ProductVersionName' className='form-control'></input>
+                        <input type='text' name='ProductFullName' className='form-control'></input>
                     </div>
                 </div>
                 <div className='col-md-4 col-lg-3 col-xl-2'>
                     <div className='input-group'>
                         <label className='input-group-text'>Version</label>
-                        <select className='form-select' name='Version'>
-                            <option value={''} selected>Choose...</option>
-                            {Version.map((version) => (
-                                <option value={version}>{version}</option>
+                        <select className='form-select' name='Version' defaultValue={'DEFAULT'}>
+                            {Version.map((version, index) => (
+                                <option value={version.value} key={index}>{version.label}</option>
                             ))}
                         </select>
                     </div>
@@ -122,10 +135,9 @@ function ListProduct() {
                 <div className='col-md-4 col-lg-3 col-xl-2'>
                     <div className='input-group'>
                         <label className='input-group-text'>Edition</label>
-                        <select className='form-select' name='Edition'>
-                            <option value={''} selected>Choose...</option>
-                            {Edition.map((edition) => (
-                                <option value={edition}>{edition}</option>
+                        <select className='form-select' name='Edition' defaultValue={'DEFAULT'}>
+                            {Edition.map((edition, index) => (
+                                <option value={edition.value} key={index}>{edition.label}</option>
                             ))}
                         </select>
                     </div>
@@ -144,6 +156,7 @@ function ListProduct() {
             <h3 className='text-center'>ข้อมูลสินค้า</h3>
             {SearchBar}
             {ListTable}
+            {showModal === true ? <Product row={selectedRow} isShow={frmLookup} setSelectedRow ={setSelectedRow} testboolean={false}/> : ''}
         </div>
     )
 }

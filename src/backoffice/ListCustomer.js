@@ -154,22 +154,22 @@ function ListCustomer() {
                         <input type="text" name="LineID" className="form-control"></input>
                     </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 col-xl-5">
                     <div className="input-group">
                         <label className="input-group-text">จังหวัด</label>
                         <input type="text" name="Province" className="form-control"></input>
                     </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 col-xl-5">
                     <div className="input-group">
                         <label className="input-group-text">รหัสไปรษณีย์</label>
                         <input type="text" name="ZipCode" className="form-control"></input>
                     </div>
                 </div>
-                <div className="col-md-2">
+                <div className="col-md-2 col-xl-1">
                     <button type="submit" className="btn btn-outline-primary form-control">ค้นหา</button>
                 </div>
-                <div className="col-md-2">
+                <div className="col-md-2 col-xl-1">
                     <button type="add" className="btn btn-success form-control" onClick={() => OnEdit(0)}>เพิ่ม</button>
                 </div>
             </div>

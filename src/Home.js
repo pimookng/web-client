@@ -1,7 +1,7 @@
 import ListNews from "page/ListNew";
 import ListVDO from "page/ListVDO";
 import MainPromotion from "page/MainPromotion";
-import NewPromotion from "page/NewPromotion";
+import NewPromotion from "page/NewsPromotion";
 import styled from "styled-components";
 import { style } from "Global"
 // import SideMenu from "component/SideMenu";

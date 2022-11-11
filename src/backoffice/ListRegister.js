@@ -142,33 +142,53 @@ function ListRegister() {
             <button type="submit">ค้นหา</button>
         </form> */}
         <form onSubmit={OnSearch} class="needs-validation container" noValidate>
-            <div class="row">
-                <label class="col-1">SerialNo</label>
-                <input class="col" type="text" name="txtSerialNo" />
-                <label class="col-1">ชื่อโปรแกรม</label>
-                <input class="col" type="text" name="txtProductName" />
-                <label class="col-1">Version</label>
-                <input class="col" type="text" name="txtVersion" />
-                <label class="col-1">Edition</label>
-                <input class="col" type="text" name="txtEdition" />
-            </div>
-            <p></p>
-            <div class="row">
-                <label class="col-1">ผู้ลงทะเบียน</label>
-                <input class="col-2" type="text" name="txtCustomerName" />
-                <div class="col-1">
-                    <input type="checkbox" name="chkDate" /><label>ช่วงวันที่ : </label>
+            <div class="row g-3">
+                <div className="col-md-3">
+                    <div className="input-group">
+                        <label class="input-group-text">SerialNo</label>
+                        <input class="form-control" type="text" name="txtSerialNo" />
+                    </div>
                 </div>
-                <div class="col">
-                    <input type='date' name="dtpStart" />
-                    <input type='date' name="dtpEnd" />
-                    <button type="submit">ค้นหา</button>
+                <div className="col-md-3">
+                    <div className="input-group">
+                        <label class="input-group-text">ชื่อโปรแกรม</label>
+                        <input class="form-control" type="text" name="txtProductName" />
+                    </div>
+                </div>
+                <div className="col-md-3">
+                    <div className="input-group">
+                        <label class="input-group-text">Version</label>
+                        <input class="form-control" type="text" name="txtVersion" />
+                    </div>
+                </div>
+                <div className="col-md-3">
+                    <div className="input-group">
+                        <label class="input-group-text">Edition</label>
+                        <input class="form-control" type="text" name="txtEdition" />
+                    </div>
+                </div>
+                <div className="col-md-3">
+                    <div className="input-group">
+                        <label class="input-group-text">ผู้ลงทะเบียน</label>
+                        <input class="form-control" type="text" name="txtCustomerName" />
+                    </div>
+                </div>
+                <div className="col-md-6">
+                    <div className="form-check">
+                        <input class="form-check-input" type="checkbox" name="chkDate" />
+                        <label class="form-check-label">ช่วงวันที่ : </label>
+                        <input type='date' name="dtpStart" />
+                        <input type='date' name="dtpEnd" />
+                    </div>
+                </div>
+                <div className="col-md-2 col-xl-1">
+                    <button type="submit" className="btn btn-outline-primary form-control">ค้นหา</button>
                 </div>
             </div>
         </form>
     </div>
 
-    return <div>
+    return <div className="main">
         {SearchBar}
         {ListTable}
         {/* edit */}

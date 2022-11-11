@@ -44,6 +44,11 @@
   --BloodRed: #880808;
 }
 
+.main {
+ min-height: 75rem;
+ padding-top: 4.5rem;
+}
+
 header {
   background: var(--BloodRed);
   text-align: center;

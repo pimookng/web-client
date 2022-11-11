@@ -7,7 +7,7 @@ function NewsPromotion() {
             <div>
                 <Carousel.Main
                     UseLink={true}
-                    Active={true}
+                    Active={true} // need only 1 Active
                     Image={process.env.PUBLIC_URL + '/Image/Test.jpg'} //local file in publci folder
                     Height="345"
                     // Width=""

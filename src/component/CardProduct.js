@@ -85,7 +85,7 @@ const CardProduct = {
                         <div className="container">
                             <div className="col-12">
                                 <div className="embed-responsive embed-responsive-16by9">
-                                    <iframe className="embed-responsive-item" width={'100%'} height={'100%'} src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowFullScreen></iframe>
+                                    <iframe className="embed-responsive-item" width={'100%'} height={'500px'} src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowFullScreen></iframe>
                                 </div>
                             </div>                            
                         </div>

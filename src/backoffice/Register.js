@@ -30,30 +30,14 @@ function Register(prop) {
     //== SaveData ==
     const OnSave = e => {
         e.preventDefault() //prevent default refresh
-
-        if (!ValidateData(e)) {
-            PostSave('Register/Save', row)
-                .then((result) => { //success
-                    if (result === "") {
-                        isShow(false); //close modal   
-                    }
-                    else
-                        alert(result); //error
-                })
-        }
-        else
-            alert("กรุณากรอกข้อมูลให้ครบ")
-    }
-
-    function ValidateData(e) {
-        if (e.target.CustomerName.value === '')
-            return false
-
-        if (e.target.IsCancel.checked === false)
-            return false
-
-        if (e.target.Reason.value === '')
-            return false
+        PostSave('Register/Save', row)
+            .then((result) => { //success
+                if (result === "") {
+                    isShow(false); //close modal   
+                }
+                else
+                    alert(result); //error
+            })
     }
 
     return (
@@ -132,7 +116,7 @@ function Register(prop) {
                             <p class="row">
                                 <input type="text" id="Email" name="Email" cols="50" wrap="soft" class="col border border-dark"
                                     value={row.Email} onChange={onDataChange} />
-                                    <p class="col-1"></p>
+                                <p class="col-1"></p>
                                 <input type="text" id="LineID" name="LineID" cols="50" wrap="soft" class="col border border-dark"
                                     value={row.LineID} onChange={onDataChange} />
                             </p>

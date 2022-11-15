@@ -18,24 +18,20 @@ function App() {
             <li><Link to="/listProduct">โปรแกรม</Link></li>
             <li><Link to="/listRegister">การลงทะเบียน</Link></li>
             <li><Link to="/listCustomer">Customer</Link></li>
-            <li><Link to="/backoffice/listProduct">Product</Link></li>            
+            <li><Link to="/backoffice/listProduct">Product</Link></li>
           </ul>
         </nav>
         <label for="nav-toggle" class="nav-toggle-label">
           <span></span>
         </label>
       </header>
-      <hr/>
-      <hr/>
-      <hr/>
-      <hr/>
-<Routes>
-  <Route path="/" element={<Home/>}></Route>
-  <Route path="/listProduct" element={<ListProduct/>}></Route>
-  <Route path="/listRegister" element={<ListRegister/>}></Route>  
-  <Route path="/listCustomer" element={<ListCustomer/>}></Route>
-  <Route path="/backoffice/listProduct" element={<Product/>}></Route>
-</Routes>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/listProduct" element={<ListProduct />}></Route>
+        <Route path="/listRegister" element={<ListRegister />}></Route>
+        <Route path="/listCustomer" element={<ListCustomer />}></Route>
+        <Route path="/backoffice/listProduct" element={<Product />}></Route>
+      </Routes>
     </div>
   );
 }

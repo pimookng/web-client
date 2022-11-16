@@ -152,7 +152,7 @@ function ListProduct() {
         </form>
     )
     return (
-        <div className='container'>
+        <div className='container main'>
             <h3 className='text-center'>ข้อมูลสินค้า</h3>
             {SearchBar}
             {ListTable}

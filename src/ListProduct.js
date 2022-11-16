@@ -2,6 +2,7 @@ import { Fetch_List } from "lib/Http";
 import { useState, useEffect } from "react";
 import CardProduct from 'component/CardProduct'
 import Accusoft from "component/Accusoft";
+import ListCustomer from "component/ListCustomer"
 
 function ListProduct() {
 
@@ -61,8 +62,9 @@ function ListProduct() {
             </div>
         )
     return (
-        <div className="container">
+        <div className="container main">
             <Accusoft.Box title="โปรแกรมธุรกิจ SME" detail={Detail()} />
+            {/* <ListCustomer></ListCustomer> */}
         </div>
         
     )

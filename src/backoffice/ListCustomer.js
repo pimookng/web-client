@@ -176,7 +176,7 @@ function ListCustomer() {
         </form>
     </div>
 
-    return <div className="container">
+    return <div className="container main">
         {SearchBar}
         {ListTable}
         {showModal === true ? <Customer row={selectedRow} isShow={frmLookup} setSelectedRow={setSelectedRow} /> : ''}

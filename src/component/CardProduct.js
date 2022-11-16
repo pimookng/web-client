@@ -1,5 +1,6 @@
 import ListFeature from "component/ListProductFeature"
-import UIExample from "component/ProductUIExample"
+import Carousel from "component/Carousel"
+import Example from "../json/PictureExample"
 
 const CardProduct = {
     Main: function Main(props) {
@@ -8,7 +9,7 @@ const CardProduct = {
             <div>
                 <div className="row py-4 mb-1">
                     <div className="col-md-4 text-center">
-                        <img className="img-fluid mb-4" src={row.ImageURL} onClick={() => OnOpenDetail(row)} alt='เลือกโปรแกรม'/>
+                        <img className="img-fluid mb-4" src={row.ImageURL} onClick={() => OnOpenDetail(row)} alt='เลือกโปรแกรม' />
                     </div>
                     <div className="col-md-8 rounded-3 border shadow-lg">
                         <div>
@@ -17,7 +18,7 @@ const CardProduct = {
                             </div>
                             <div className="col-md-12">
                                 <div className="p-4">
-                                    <p>{row.Description}</p>                                    
+                                    <p>{row.Description}</p>
                                 </div>
                                 <div className="text-center text-md-end mb-3">
                                     <button className="btn btn-outline-secondary" type="button" onClick={() => OnOpenDetail(row)}>More Info.</button>
@@ -32,8 +33,19 @@ const CardProduct = {
     },
 
     Detail: function Detail(props) {
-        const { row, isShow } = props;
+        const { row, isShow } = props
         const edition = row.editions.map(item => item).reverse() //std,ex,ent,sql
+        
+        let data = Example.Stock
+        if (row.ProductName === 'Stock') {
+            data = Example.Stock
+        }
+        else if (row.ProductName === 'Car Service') {
+            data = Example.CarService
+        }
+        else if (row.ProductName === 'Account') {
+            data = Example.Account
+        }
 
         let modalStyle = {
             display: 'block'
@@ -45,14 +57,14 @@ const CardProduct = {
 
         let ListEdition = <p>no edition</p>
         let moreDetail = () => {
-            if (row.ProductVersionName === 'Stock 3.0'){
-                return <ListFeature.Stock/>
+            if (row.ProductName === 'Stock') {
+                return <ListFeature.Stock />
             }
-            else if (row.ProductName === 'Car Service'){
-                return <ListFeature.CarService/>
+            else if (row.ProductName === 'Car Service') {
+                return <ListFeature.CarService />
             }
-            else if (row.ProductName === 'Account'){
-                return <ListFeature.Account/>
+            else if (row.ProductName === 'Account') {
+                return <ListFeature.Account />
             }
         }
 
@@ -81,16 +93,19 @@ const CardProduct = {
                         </div>
                     </div>
 
-                    <div className="p-2 mb-4 bg-light rounded-3 border">
+                    <div className="p-2 mb-4 bg-light rounded-2 border">
                         <div className="container">
                             <div className="col-12">
                                 <div className="embed-responsive embed-responsive-16by9">
                                     <iframe className="embed-responsive-item" width={'100%'} height={'500px'} src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowFullScreen></iframe>
                                 </div>
-                            </div>                            
+                            </div>
                         </div>
                     </div>
-                    <UIExample />
+                    <div className="p-2 mb-4 rounded-2 border">
+                        <Carousel.ExampleUI data={data}></Carousel.ExampleUI>
+                    </div>
+
                     {moreDetail()}
                 </div>
             )
@@ -105,7 +120,7 @@ const CardProduct = {
                         </div>
                         <div className="modal-body">
                             {ListEdition}
-                            
+
                         </div>
                     </div>
                 </div>

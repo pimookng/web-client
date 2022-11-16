@@ -1,0 +1,22 @@
+{
+  "Stock": [
+    {
+      "Caption": "รูป1",
+      "Path": "http://accusoft.co.th/images/Products/screen/Full1024/Stock20Ent01.gif"
+    },
+    {
+      "Caption": "รูป2",
+      "Path": "http://accusoft.co.th/images/Products/screen/Full1024/Stock20Ent02.gif"
+    }
+  ],
+  "CarService": [
+    {
+      "Caption": "รูป1",
+      "Path": "http://www.accusoft.co.th/images/products/Car4SQL.png"
+    },
+    {
+      "Caption": "รูป2",
+      "Path": "http://www.accusoft.co.th/images/products/Stock3SQL.png"
+    }
+  ]
+}

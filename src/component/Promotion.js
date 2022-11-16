@@ -19,7 +19,10 @@ const Promotion = {
 
         return (
             <TopRoundBox radius="10">
-                <div className="row">
+                <div className="container">
+                    <ImgTopRound radius="10" src={image} />
+                </div>
+                {/* <div className="row">
                     <div className="col-md">
                         <ImgTopRound radius="10" src={image}/> 
                     </div>
@@ -29,7 +32,7 @@ const Promotion = {
                         <p align="right">&emsp;&emsp;{detail}</p>
                     </div>
 
-                </div>
+                </div> */}
                 <div className="row footer1">
                     <div className="col-md">
                         {/* {Link} */}

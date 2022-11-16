@@ -7,7 +7,7 @@ import ListProduct from './backoffice/ListProduct';
 
 function App() {
     return (
-      <div className="Accusoft โปรแกรมธุรกิจ SME">
+      <div className="">
         <nav>
           <ul>
             <li>

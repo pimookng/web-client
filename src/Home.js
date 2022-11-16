@@ -28,7 +28,7 @@ function Home() {
     var i = JSON.parse(JSON.stringify(v.Image.svg));
 
     return (
-        <Container>
+        <Container className="main">
             <Row>
                 <Column>
                     {/* <div>

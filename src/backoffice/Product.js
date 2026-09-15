@@ -1,4 +1,4 @@
-import { PostSave } from "lib/Http";
+import { PostSave } from "../lib/Http";
 
 function Product(prop){
     const { row, isShow, setSelectedRow } = prop;

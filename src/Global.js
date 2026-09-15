@@ -1,8 +1,8 @@
 import styled,{css} from "styled-components";
 export const globalVar = {
     URL: {
-        // Server: "http://localhost:5000/"
-        Server:"http://localhost:24970/" //iis run
+         Server: "http://localhost:5000/"
+        //Server:"http://localhost:24970/" //iis run
     },
     Request: {
         Post: {

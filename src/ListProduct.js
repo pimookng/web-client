@@ -1,8 +1,8 @@
 import { Fetch_List } from "lib/Http";
 import { useState, useEffect } from "react";
-import CardProduct from 'component/CardProduct'
-import Accusoft from "component/Accusoft";
-import ListCustomer from "component/ListCustomer"
+import CardProduct from './component/CardProduct'
+import Accusoft from "./component/Accusoft";
+import ListCustomer from "./component/ListCustomer"
 
 function ListProduct() {
 
